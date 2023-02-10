@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TextField, Button } from '@mui/material';
 
 
 function LoginForm(){
@@ -22,29 +21,25 @@ function LoginForm(){
     return(
         <div>
             <form onSubmit={onFormSubmit}>
-                <TextField
-                    id="outlined-required username"
-                    label="username"
-                    type="username"
-                    // type={ error ? "Display the error here..." : null }
-                    name="username"
-                    value={loginData.username}
-                    onChange={(e) => onFormChange(e)}
-                    />
-                <TextField
-                    id="outlined-password-input password"
-                    label="password"
-                    type="password"
-                    // type={ error ? "Display the error here..." : null }
-                    name="password"
-                    value={loginData.password}
-                    onChange={(e) => onFormChange(e)}
-                    />
-                <Button 
-                    variant="contained" 
-                    type="submit"
-                    disableElevation
-                    >Log in</Button>
+                <label>Username
+                    <input 
+                        label="username"
+                        type="username"
+                        name="username"
+                        value={loginData.username}
+                        onChange={(e) => onFormChange(e)}
+                        />
+                    </label>
+                <label>Password
+                    <input 
+                        label="password"
+                        type="password"
+                        name="password"
+                        value={loginData.password}
+                        onChange={(e) => onFormChange(e)}
+                        />
+                    </label>
+                <button type="submit">Sign up</button>
             </form>
         </div>
     );
