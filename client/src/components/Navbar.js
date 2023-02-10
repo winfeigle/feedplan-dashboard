@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/feedplan_logo.png"
 
+
 function Navbar(){
     return(
         <div id="navbar">

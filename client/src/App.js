@@ -6,14 +6,15 @@ import Navbar from './components/Navbar';
 
 function App() {
 
+  let login = true;
+
 
   return (
     <div className="App">
       <header className="App-header">
         <Navbar />
         <div id="login-forms">
-          <LoginForm />
-          <SignupForm />
+          { login ? <LoginForm /> : <SignupForm /> }
         </div>
       </header>
     </div>

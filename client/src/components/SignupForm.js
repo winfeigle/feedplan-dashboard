@@ -24,36 +24,50 @@ function SignupForm(){
 
 
     return(
-        <div>
-            <form onSubmit={onFormSubmit}>
-                <label>Username
-                    <input 
-                        label="username"
-                        type="username"
-                        name="username"
-                        value={loginData.username}
-                        onChange={(e) => onFormChange(e)}
-                        />
-                    </label>
-                <label>Email
-                    <input 
-                        label="email"
-                        type="email"
-                        name="email"
-                        value={loginData.email}
-                        onChange={(e) => onFormChange(e)}
-                        />
-                    </label>
-                <label>Password
-                    <input 
-                        label="password"
-                        type="password"
-                        name="password"
-                        value={loginData.password}
-                        onChange={(e) => onFormChange(e)}
-                        />
-                    </label>
-                <button type="submit">Sign up</button>
+        <div className="form-container">
+            <form onSubmit={onFormSubmit} className="form">
+                <label htmlFor="username" className="form-label">
+                Username:
+                </label>
+                <input
+                type="username"
+                id="username"
+                name="username"
+                placeholder="username"
+                value={loginData.username}
+                onChange={(e) => onFormChange(e)}
+                className="form-input"
+                />
+
+                 <label htmlFor="email" className="form-label">
+                Email:
+                </label>
+                <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email"
+                value={loginData.email}
+                onChange={(e) => onFormChange(e)}
+                className="form-input"
+                />
+
+                <label htmlFor="password" className="form-label">
+                Password:
+                </label>
+                <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                value={loginData.password}
+                onChange={(e) => onFormChange(e)}
+                className="form-input"
+                />
+
+                <button type="submit" className="form-submit-button">
+                Sign up
+                </button>
             </form>
         </div>
     );
