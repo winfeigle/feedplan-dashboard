@@ -14,7 +14,7 @@ function LoginForm(){
 
     const onFormSubmit = (e) => {
         e.preventDefault()
-        console.log(loginData)
+        // console.log(loginData)
         setLoginData({username: "",password: ""})
     }
 
@@ -23,7 +23,7 @@ function LoginForm(){
         <div>
             <form onSubmit={onFormSubmit}>
                 <TextField
-                    id="outlined-required"
+                    id="outlined-required username"
                     label="username"
                     type="username"
                     // type={ error ? "Display the error here..." : null }
@@ -32,7 +32,7 @@ function LoginForm(){
                     onChange={(e) => onFormChange(e)}
                     />
                 <TextField
-                    id="outlined-password-input"
+                    id="outlined-password-input password"
                     label="password"
                     type="password"
                     // type={ error ? "Display the error here..." : null }
