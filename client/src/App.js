@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -9,8 +10,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <LoginForm />
-        <SignupForm />
+        <Navbar />
+        <div id="login-forms">
+          <LoginForm />
+          <SignupForm />
+        </div>
       </header>
     </div>
   );

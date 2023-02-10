@@ -1,13 +1,22 @@
-
-
-
 .App-header {
-  /* background-color: #282c34; */
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  /* color: white; */
+}
+
+#navbar{
+  width: 100vw;
+  height: 5rem;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  justify-content: start;
+}
+
+#navbar-logo{
+  height: 50%;
+}
+
+#login-forms{
+  margin: 20vh auto;
 }
 
