@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import login from "../utilities/login";
 
 
 function LoginForm(){
@@ -12,9 +13,12 @@ function LoginForm(){
     }
 
     const onFormSubmit = (e) => {
-        e.preventDefault()
-        console.log(loginData)
-        setLoginData({username: "",password: ""})
+      e.preventDefault()
+      
+      const { username, password } = loginData
+      login(username, password)
+
+      setLoginData({username: "", password: ""})
     }
 
 

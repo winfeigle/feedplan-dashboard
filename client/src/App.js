@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
+import { UserContext } from './helper/Context';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
-import Navbar from './components/Navbar';
+import SideNav from './components/SideNavigation';
 
 function App() {
 
@@ -11,12 +13,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar />
-        <div id="login-forms">
-          { login ? <LoginForm /> : <SignupForm /> }
-        </div>
-      </header>
+      
+        <UserContext.Provider value="[test user]">
+          <SideNav />
+          <div id="login-forms">
+            { login ? <LoginForm /> : <SignupForm /> }
+          </div>
+        </UserContext.Provider>
     </div>
   );
 }

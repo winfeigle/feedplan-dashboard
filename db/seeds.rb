@@ -1,6 +1,6 @@
 puts "Seeding in progress..."
 
-# Admin.create!(username: "win", email: "win@feedplan.io", password_digest: "password")
+Admin.create!(username: "win", email: "win@feedplan.io", password: "password")
 
 
 
