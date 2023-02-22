@@ -4,7 +4,7 @@ import { UserContext } from "../helper/Context";
 import logo from "../assets/feedplan_logo.png"
 
 export default function SideNavigation(){
-    const { admin, setAdmin} = useContext(UserContext);
+    const {setAdmin} = useContext(UserContext);
 
     const handleLogout = () => {
         fetch('/logout', {

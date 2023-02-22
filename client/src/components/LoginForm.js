@@ -2,9 +2,8 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../helper/Context";
 
 
-function LoginForm(){
-  const user = useContext(UserContext)
-  console.log(user)
+function LoginForm({ handleLogin }){
+  
   const [ loginData, setLoginData ] = useState({
         username: "",
         password: ""
@@ -29,7 +28,7 @@ function LoginForm(){
         })
           .then(r => {
             if(r.ok){
-                r.json().then((admin) => console.log(admin))
+                r.json().then((user) => handleLogin(user))
             } else{
                 r.json().then((err) => console.log(`${Object.keys(err)}: ${Object.values(err)}`))
             }

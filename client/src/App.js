@@ -13,31 +13,33 @@ function App() {
 
   useEffect(() => {
     fetch('/me')
-      .then(r => r.json())
-      .then(setAdmin)
+      .then(r => {
+        if(r.ok){
+          r.json().then(data => console.log(data))
+        }else{
+          r.json().then(error => console.log("Errors"))
+        }
+      })
   }, [])
+
+  function onLogin(user){
+    setAdmin(user)
+  }
   
 
-  { if(!admin){
-    // Add navigation above form...
-    return(
-        <div id="login-forms">
-          <LoginForm />
-        </div>
-      );
-    };
-  }
+  console.log(`App.js: ${admin}`)
 
   return (
     <div>
-      { !admin ? 
-        <div id="login-forms"><LoginForm /></div> :
+      { admin ? 
         <Router>
           <UserContext.Provider value={providerValue}>
             <Restaurants />
             <SideNav />
           </UserContext.Provider>
       </Router>
+      : 
+      <div id="login-forms"><LoginForm handleLogin={onLogin}/></div>
       
       }
     </div>
