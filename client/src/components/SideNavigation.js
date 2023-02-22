@@ -1,22 +1,30 @@
 import React, { useContext } from "react";
 import { UserContext } from "../helper/Context";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import logo from "../assets/feedplan_logo.png"
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
 
 export default function SideNavigation(){
-    const currentUser = useContext(UserContext);
+    const { admin, setAdmin} = useContext(UserContext);
+
+    const handleLogout = () => {
+        fetch('/logout', {
+            method: "DELETE"
+        }).then((r) => {
+            if (r.ok) {
+                setAdmin(null);
+            }
+        }).then(<redirect to="/" />)
+    }
 
     return(
-      <nav id="navbar">
-        <div>
+      <div>
+        <nav id="navbar">
           <div>
-              <img id="navbar-logo" src={logo} alt="home logo"/>
+            <img id="navbar-logo" src={logo} alt="home logo"/>
+            {/* <p>@{admin}</p> */}
           </div>
-        </div>
-      </nav>
+          <button onClick={handleLogout}>Log out</button>
+        </nav>
+      </div>
     );
 }

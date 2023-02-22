@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  
-  resources :admins, only: [:show, :create]
+
+
+  get '/me', to: 'admins#show'
+  # post '/signup', to: 'users#create'
 
   post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
 
   # Routing logic: fallback requests for React Router.

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    skip_before_action :authorize, only: :create
 
     def create
         admin = Admin.find_by(username: params[:username])
@@ -8,5 +9,10 @@ class SessionsController < ApplicationController
         else
             render json: {Error: "Invalid username or password"}, status: :unauthorized
         end
+    end
+
+    def destroy
+        session.delete :user_id
+        head :no_content
     end
 end

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import login from "../utilities/login";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../helper/Context";
 
 
 function LoginForm(){
-    const [ loginData, setLoginData ] = useState({
+  const user = useContext(UserContext)
+  console.log(user)
+  const [ loginData, setLoginData ] = useState({
         username: "",
         password: ""
     })
@@ -14,9 +16,24 @@ function LoginForm(){
 
     const onFormSubmit = (e) => {
       e.preventDefault()
-      
       const { username, password } = loginData
-      login(username, password)
+      fetch('login', {
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify({
+            username,
+            password
+          })
+        })
+          .then(r => {
+            if(r.ok){
+                r.json().then((admin) => console.log(admin))
+            } else{
+                r.json().then((err) => console.log(`${Object.keys(err)}: ${Object.values(err)}`))
+            }
+          })
 
       setLoginData({username: "", password: ""})
     }
@@ -52,7 +69,7 @@ function LoginForm(){
         />
 
         <button type="submit" className="form-submit-button">
-          Sign up
+          Log in
         </button>
       </form>
     </div>
