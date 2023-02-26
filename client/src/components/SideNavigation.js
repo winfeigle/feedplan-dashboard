@@ -1,20 +1,11 @@
 import React, { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import {UserContext} from "../context/UserContext";
 
 import logo from "../assets/feedplan_logo.png"
 
 export default function SideNavigation(){
-    const { admin, setAdmin } = useContext(UserContext);
+    const { user, logoutUser } = useContext(UserContext);
 
-    const handleLogout = () => {
-        fetch('/logout', {
-            method: "DELETE"
-        }).then((r) => {
-            if (r.ok) {
-                setAdmin(null);
-            }
-        }).then(<redirect to="/" />)
-    }
 
     return(
       <div>
@@ -22,9 +13,9 @@ export default function SideNavigation(){
           <div>
             <img id="navbar-logo" src={logo} alt="home logo"/>
             {/* <p>@{admin}</p> */}
-            <p>@{admin.username}</p>
+            <p>@{user.username}</p>
           </div>
-          <button onClick={handleLogout}>Log out</button>
+          <button onClick={logoutUser}>Log out</button>
         </nav>
       </div>
     );

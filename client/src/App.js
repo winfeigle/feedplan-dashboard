@@ -1,36 +1,25 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './App.css';
-import { UserContext } from './context/UserContext';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginForm from './components/LoginForm';
 // import SignupForm from './components/SignupForm';
 import SideNav from './components/SideNavigation';
 import Restaurants from './pages/Restaurants';
 import Account from './pages/Account';
+import {UserContext} from './context/UserContext';
 
 function App() {
+  const { loadUser, user } = useContext(UserContext);
 
-  // useEffect(() => {
-  //   fetch('/me')
-  //     .then(r => {
-  //       if(r.ok){
-  //         r.json().then(data => console.log(data))
-  //       }else{
-  //         r.json().then(error => console.log("Errors"))
-  //       }
-  //     })
-  // }, [])
-
-  function onLogin(user){
-    setAdmin(user)
-  }
+  useEffect(() => {
+    loadUser()
+  }, [])
 
 
   return (
     <div>
-      { admin ? 
+      { user ? 
         <Router>
-          <UserContext.Provider value={providerValue}>
             <SideNav />
             <Routes>
               <Route 
@@ -42,11 +31,10 @@ function App() {
                 element={<Account />} 
                 />
             </Routes>
-          </UserContext.Provider>
       </Router>
       : 
       <div id="login-forms">
-        <LoginForm handleLogin={onLogin}/>
+        <LoginForm />
         {/* <SignupForm handleLogin={onLogin}/> */}
       </div> }
     </div>

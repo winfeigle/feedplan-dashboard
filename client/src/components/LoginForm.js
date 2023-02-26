@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import {UserContext} from "../context/UserContext";
 
 
-function LoginForm({ handleLogin }){
+function LoginForm(){
+  const { loginUser } = useContext(UserContext);
   
   const [ loginData, setLoginData ] = useState({
         username: "",
@@ -15,25 +16,7 @@ function LoginForm({ handleLogin }){
 
     const onFormSubmit = (e) => {
       e.preventDefault()
-      const { username, password } = loginData
-      fetch('login', {
-          method: "POST",
-          headers: {
-            "Content-Type":"application/json"
-          },
-          body: JSON.stringify({
-            username,
-            password
-          })
-        })
-          .then(r => {
-            if(r.ok){
-                r.json().then((user) => handleLogin(user))
-            } else{
-                r.json().then((err) => console.log(`${Object.keys(err)}: ${Object.values(err)}`))
-            }
-          })
-
+      loginUser(loginData)
       setLoginData({username: "", password: ""})
     }
 
