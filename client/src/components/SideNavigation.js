@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserContext } from "../helper/Context";
+import { UserContext } from "../context/UserContext";
 
 import logo from "../assets/feedplan_logo.png"
 
