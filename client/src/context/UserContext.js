@@ -30,7 +30,7 @@ const UserProvider = ({ children }) => {
         })
           .then(r => {
             if(r.ok){
-                r.json().then(data => setUser(data.user));
+                // r.json().then(data => setUser(data.user));
             } else{
                 r.json().then((err) => console.log(`${Object.keys(err)}: ${Object.values(err)}`))
             }
