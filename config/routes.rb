@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :admins, only: [ :index ]
+
 
   get '/me', to: 'admins#show'
   # post '/signup', to: 'users#create'

@@ -5,8 +5,8 @@ class AdminsController < ApplicationController
         render json: @current_user
     end
 
-    def create
-
+    def index
+        # current_user = User.find_by(id: session[:admin_id])
     end
 
     private
