@@ -11,7 +11,7 @@ const UserProvider = ({ children }) => {
         if(r.ok){
           r.json().then(setUser)
         }else{
-          r.json().then(error => console.log("Errors"))
+          console.log("User not set...")
         }
       })
     }

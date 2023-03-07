@@ -63,3 +63,19 @@
   transition: 200ms;
 }
 
+.restaurant-container-TEST{
+  display: flex;
+  justify-content: center;
+}
+
+.restaurant-card-TEST{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  background-color: rgb(197, 197, 255);
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+  border-radius: 5px;
+}
+

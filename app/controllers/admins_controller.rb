@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
     skip_before_action :authorize, only: :create
     
-    def show
+    def show   
         render json: @current_user
     end
 
