@@ -22,7 +22,8 @@ function App() {
         <Router>
           <div id="app-dashboard">
             <SideNav />
-            <Routes>
+            <div id="page-content-container">
+              <Routes>
               <Route 
                 path="/" 
                 element={<Restaurants />} 
@@ -32,6 +33,7 @@ function App() {
                 element={<Account />} 
                 />
             </Routes>
+            </div>
           </div>
       </Router>
       : 

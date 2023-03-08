@@ -4,11 +4,8 @@
   justify-content: center;
 }
 
-#app-dashboard{
-  display: flex;
-}
-
 #navbar{
+  position: fixed;
   max-width: 16vw;
   min-width: 50px;
   height: 100vh;
@@ -35,7 +32,10 @@
 
 #navbar-current-user-container{
   display: flexbox;
+}
 
+#page-content-container{
+  margin-left: 200px;
 }
 
 .form-container {
@@ -87,15 +87,14 @@
 
 .restaurant-container-TEST{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .restaurant-card-TEST{
   display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
   /* border: solid black 1px; */
   background-color: rgb(245, 245, 245);
   margin: 20px 10px;
