@@ -3,6 +3,7 @@ import {UserContext} from "../context/UserContext";
 
 import logo from "../assets/feedplan_logo.png"
 
+
 export default function SideNavigation(){
     const { user, logoutUser } = useContext(UserContext);
 
@@ -10,14 +11,18 @@ export default function SideNavigation(){
 
 
     return(
-      <div>
+      <div id="side-navbar">
         <nav id="navbar">
-          <div>
+          <div className="feedplan-logo-container">
             <img id="navbar-logo" src={logo} alt="home logo"/>
             {/* <p>@{admin}</p> */}
-            <p>@{user.username}</p>
           </div>
-          <button onClick={logoutUser}>Log out</button>
+          <div id="navbar-current-user-container">
+            <span>
+              <p>@{user.username}</p>
+            </span>
+            <button onClick={logoutUser}>Log out</button>
+          </div>
         </nav>
       </div>
     );

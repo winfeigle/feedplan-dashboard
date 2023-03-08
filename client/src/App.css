@@ -4,16 +4,38 @@
   justify-content: center;
 }
 
+#app-dashboard{
+  display: flex;
+}
+
 #navbar{
-  width: 100vw;
-  height: 5rem;
+  max-width: 16vw;
+  min-width: 50px;
+  height: 100vh;
   background-color: rgb(221, 221, 221);
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: none;
   justify-content: flex-start;
+  padding: 1rem;
+}
+
+.feedplan-logo-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
 }
 
 #navbar-logo{
   height: 2rem;
+  opacity: 20%;
+}
+
+#navbar-current-user-container{
+  display: flexbox;
+
 }
 
 .form-container {
@@ -72,10 +94,14 @@
   display: flex;
     align-items: center;
     justify-content: center;
-  border: solid black 1px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  /* border: solid black 1px; */
+  background-color: rgb(245, 245, 245);
   margin: 20px 10px;
   width: 200px;
   height: 100px;
   border-radius: 5px;
 }
+
 

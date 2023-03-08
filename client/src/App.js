@@ -20,6 +20,7 @@ function App() {
     <div>
       { user ? 
         <Router>
+          <div id="app-dashboard">
             <SideNav />
             <Routes>
               <Route 
@@ -31,6 +32,7 @@ function App() {
                 element={<Account />} 
                 />
             </Routes>
+          </div>
       </Router>
       : 
       <div id="login-forms">
