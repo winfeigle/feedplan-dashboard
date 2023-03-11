@@ -6,8 +6,7 @@
 
 #navbar{
   position: fixed;
-  max-width: 16vw;
-  min-width: 50px;
+  width: 15em;
   height: 100vh;
   background-color: rgb(221, 221, 221);
   display: flex;
@@ -35,7 +34,7 @@
 }
 
 #page-content-container{
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 .form-container {
