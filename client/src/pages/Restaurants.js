@@ -14,6 +14,7 @@ export default function Restaurants(){
 
     return(
         <div>
+            {/* TESTING RESTAURANT CREATE STYLE / REMOVE LATER */}
             <div className="restaurant-container-TEST">
                 {restaurants.map((restaurant) => {
                     return(
