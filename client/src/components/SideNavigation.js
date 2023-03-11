@@ -7,8 +7,6 @@ import logo from "../assets/feedplan_logo.png"
 export default function SideNavigation(){
     const { user, logoutUser } = useContext(UserContext);
 
-    console.log(user)
-
 
     return(
       <div id="side-navbar">

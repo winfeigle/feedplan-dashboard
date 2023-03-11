@@ -6,7 +6,8 @@ import LoginForm from './components/LoginForm';
 import SideNav from './components/SideNavigation';
 import Restaurants from './pages/Restaurants';
 import Account from './pages/Account';
-import {UserContext} from './context/UserContext';
+import { UserContext } from './context/UserContext';
+import { RestaurantsProvider } from './context/RestaurantsContext';
 
 function App() {
   const { loadUser, user } = useContext(UserContext);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div>
       { user ? 
+      <RestaurantsProvider>
         <Router>
           <div id="app-dashboard">
             <SideNav />
@@ -36,6 +38,7 @@ function App() {
             </div>
           </div>
       </Router>
+      </RestaurantsProvider>
       : 
       <div id="login-forms">
         <LoginForm />
