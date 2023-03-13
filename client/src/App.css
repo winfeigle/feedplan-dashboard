@@ -4,9 +4,14 @@
   justify-content: center;
 }
 
-#navbar{
+#navbar-container{
+  /* Side navigation container */
   position: fixed;
   width: 15em;
+}
+
+#navbar{
+  /* padding: 20px; */
   height: 100vh;
   box-shadow: -1px 0px 1px rgb(225, 225, 225) inset;
   background-color: white;
@@ -15,14 +20,13 @@
   flex-direction: column;
   flex-wrap: none;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .feedplan-logo-container{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-content: center;
-  padding: 1rem;
 }
 
 #navbar-logo{

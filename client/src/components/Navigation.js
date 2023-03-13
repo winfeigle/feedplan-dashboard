@@ -4,12 +4,12 @@ import {UserContext} from "../context/UserContext";
 import logo from "../assets/feedplan_combo_logo_dark.png"
 
 
-export default function SideNavigation(){
+export default function Navigation(){
     const { user, logoutUser } = useContext(UserContext);
 
 
     return(
-      <div id="side-navbar">
+      <div id="navbar-container">
         <nav id="navbar">
           <div className="feedplan-logo-container">
             <img id="navbar-logo" src={logo} alt="home logo"/>

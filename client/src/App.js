@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginForm from './components/LoginForm';
 // import SignupForm from './components/SignupForm';
-import SideNav from './components/SideNavigation';
+import Navigation from './components/Navigation';
 import Restaurants from './pages/Restaurants';
 import Account from './pages/Account';
 import { UserContext } from './context/UserContext';
@@ -23,7 +23,7 @@ function App() {
       <RestaurantsProvider>
         <Router>
           <div id="app-dashboard">
-            <SideNav />
+            <Navigation />
             <div id="page-content-container">
               <Routes>
               <Route 
