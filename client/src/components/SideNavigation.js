@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import {UserContext} from "../context/UserContext";
 
-import logo from "../assets/feedplan_logo.png"
+import logo from "../assets/feedplan_combo_logo_dark.png"
 
 
 export default function SideNavigation(){
