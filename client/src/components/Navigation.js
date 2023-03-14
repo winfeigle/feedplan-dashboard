@@ -16,7 +16,7 @@ function Navigation(){
           <div id="navigation-links-container">
             <h4 className="nav-headers">MAIN MENU</h4>
             <div id="navigation-links">
-              <a>▨  Dashboard</a>
+              <a href="/dashboard">▨  Dashboard</a>
               <a href="/restaurants">▨  Restaurants</a>
               <a href="/meal-plans">▨  Meal Plans</a>
               <a>▨  Menu Items</a>

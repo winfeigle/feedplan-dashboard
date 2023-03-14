@@ -19,12 +19,13 @@ function App() {
 
   return (
     <div>
-      { user ? 
+
+      { user &&
       <RestaurantsProvider>
         <Dashboard />
-      </RestaurantsProvider>
-      : 
-      <div id="login-forms">
+      </RestaurantsProvider>}
+      
+      {!user && <div id="login-forms">
         <Routes>
           <Route
             element={<LoginForm />}

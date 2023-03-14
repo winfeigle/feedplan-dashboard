@@ -15,6 +15,10 @@ const Dashboard = () =>{
                 <div id="page-content-container">
                     <Routes>
                     <Route 
+                        // element={<Restaurants />} 
+                        path="/dashboard" 
+                        />
+                    <Route 
                         element={<Restaurants />} 
                         path="/restaurants" 
                         />
