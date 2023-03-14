@@ -1,23 +1,9 @@
 import React from "react";
 import { Badge, Button } from 'react-bootstrap';
+import FormatAddress from "../helpers/FormatAddress";
 
 
 const RestaurantCard = ({ restaurant }) => {
-
-    const formatAddress = () => {
-        let street = restaurant.address.split(", ", 1)+ ","
-        let city = restaurant.address.match(/([^,]+)/g)[1]
-        let state = restaurant.address.match(/([^,]+)/g)[2]
-
-        return(
-            <span className="restaurant-address">
-                <p>
-                    <b>{street}</b>
-                {`${city}, ${state}`}
-                </p>
-            </span>
-        );
-    }
 
     return(
         <div 
@@ -44,7 +30,7 @@ const RestaurantCard = ({ restaurant }) => {
                     <span className="restaurant-description">
                         {restaurant.description.slice(0,100) + '... '}
                     </span>
-                    {formatAddress()}
+                    <FormatAddress rawAddress={restaurant.address}/>
                 </div>
                 <div className="restaurant-mealplans">
                     {/* Meal plans elements to go here */}
