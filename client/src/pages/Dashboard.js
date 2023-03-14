@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
+import DashLanding from "../components/DashLanding";
 import Navigation from '../components/Navigation';
 import Restaurants from './Restaurants';
 import Account from "./Account";
@@ -15,7 +16,7 @@ const Dashboard = () =>{
                 <div id="page-content-container">
                     <Routes>
                         <Route 
-                            // element={<Restaurants />} 
+                            element={<DashLanding />} 
                             path="/dashboard" 
                             />
                         <Route 

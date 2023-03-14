@@ -27,6 +27,7 @@ const RestaurantCard = ({ restaurant }) => {
                 <div className="card-headings">
                     <img 
                         src={restaurant.icon_url} 
+                        alt="restaurant logo"
                         style={{
                             width: '50px', 
                             borderRadius: "50%",

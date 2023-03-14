@@ -19,7 +19,7 @@ function Navigation(){
               <a href="/dashboard">▨  Dashboard</a>
               <a href="/restaurants">▨  Restaurants</a>
               <a href="/meal-plans">▨  Meal Plans</a>
-              <a>▨  Menu Items</a>
+              <a href="/menu-items">▨  Menu Items</a>
             </div>
           </div>
           <Button id="logout-button" variant="outline-feedplan-purple" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
