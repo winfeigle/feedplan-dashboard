@@ -24,7 +24,7 @@ export default function Restaurants(){
    
 
     return(
-        <div className="restaurant-container-TEST">
+        <div className="restaurants-container">
             {renderRestaurantCards}
         </div>
     );

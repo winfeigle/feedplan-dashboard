@@ -38,7 +38,6 @@ h4.nav-headers{
   background-color: white;
   display: flex;
   flex-direction: column;
-  flex-wrap: none;
   padding: 2rem;
 }
 
@@ -145,7 +144,7 @@ h4.nav-headers{
   transition: 200ms;
 }
 
-.restaurant-container-TEST{
+.restaurants-container{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
