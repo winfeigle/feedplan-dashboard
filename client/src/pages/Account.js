@@ -9,12 +9,10 @@ export default function Account(){
 
     return(
         <div>
-            <Button variant="outline-secondary" size="xl" style={{ display: "flex" }}>
-                <img id="profile-icon" src={profile} />
-                <div 
-                    style={{marginLeft: "5px"}}>
-                    ＋
-                </div>
+            <Button variant="outline-dark" size="lg" style={{ display: "flex", alignContent: "center" }}>
+                {/* <img id="profile-icon" src={profile} /> */}
+                <div id="profile-icon">{user.username[0].toUpperCase()}</div>
+                <div>＋</div>
             </Button>
         </div>
     );
