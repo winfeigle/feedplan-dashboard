@@ -25,6 +25,7 @@ export default function Restaurants(){
 
     return(
         <div className="restaurants-container">
+            <h2 className="dashboard-heading" variant="feedplan-dark-mist">Restaurants</h2>
             {renderRestaurantCards}
         </div>
     );

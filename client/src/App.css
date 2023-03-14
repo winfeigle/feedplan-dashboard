@@ -8,6 +8,16 @@ body{
   justify-content: center;
 }
 
+h1, h2, h3, h4{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h2.dashboard-heading{
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 3rem;
+}
+
 h4.nav-headers{
   font-size: .75rem;
   letter-spacing: 1px;
@@ -17,7 +27,7 @@ h4.nav-headers{
 
 #dashboard-wrapper{
   display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     grid-template-areas: "sidebar dashboard";
 }
 
@@ -29,8 +39,6 @@ h4.nav-headers{
   grid-area: dashboard;
   margin-left: 2rem;
 }
-
-
 
 #navbar{
   height: 100vh;
@@ -89,10 +97,6 @@ h4.nav-headers{
   border-radius: 50%;
   background-color: #251d2e50;
   color: white;
-}
-
-#profile-icon, #profile-plus-icon{
-  /* margin: 0px 5px; */
 }
 
 .horizontal-account-break{
@@ -156,8 +160,10 @@ h4.nav-headers{
 
 .restaurants-container{
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .restaurant-card-TEST{
@@ -166,7 +172,6 @@ h4.nav-headers{
     justify-content: center;
   /* border: solid black 1px; */
   background-color: white;
-  margin: 20px 10px;
   width: 200px;
   height: 100px;
   border-radius: 5px;
