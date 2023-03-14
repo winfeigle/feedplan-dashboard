@@ -15,21 +15,30 @@ h4.nav-headers{
   margin-bottom: 1rem;
 }
 
-#navbar-container{
-  /* Side navigation container */
-  position: fixed;
-  width: 15em;
+#dashboard-wrapper{
+  display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "sidebar dashboard";
 }
+
+#navbar{
+  grid-area: sidebar;
+}
+
+#app-dashboard{
+  grid-area: dashboard;
+  margin-left: 2rem;
+}
+
+
 
 #navbar{
   height: 100vh;
   box-shadow: -1px 0px 1px rgb(225, 225, 225) inset;
   background-color: white;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   flex-wrap: none;
-  justify-content: flex-start;
   padding: 2rem;
 }
 
@@ -71,7 +80,7 @@ h4.nav-headers{
 #static-account-container{
   position: fixed;
     top: 25px;
-    right: 50px;
+    right: 40px;
 }
 
 #profile-icon{
@@ -86,10 +95,6 @@ h4.nav-headers{
 #logout-button{
   position: fixed;
   bottom: 25px;
-}
-
-#page-content-container{
-  margin-left: 300px;
 }
 
 

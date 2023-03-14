@@ -5,18 +5,18 @@ import Navigation from '../components/Navigation';
 import Restaurants from './Restaurants';
 import Account from "./Account";
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Dashboard = () =>{
 
     return(
-    <div id="dashboard-container">
-        <Router>
-            <div id="navbar-container">
-                <Navigation />
-            </div>
-            <div id="static-account-container">
-                <Account />
-            </div>
-            <div id="app-dashboard">
+    <div id="dashboard-wrapper">
+        <Account />
+        <Navigation />
+        <div id="app-dashboard">
+            <Router>
                 <div id="page-content-container">
                     <Routes>
                     <Route 
@@ -29,8 +29,8 @@ const Dashboard = () =>{
                         />
                     </Routes>
                 </div>
+            </Router>
             </div>
-        </Router>
     </div>
     );
 }
