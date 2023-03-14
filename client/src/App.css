@@ -80,6 +80,7 @@ h4.nav-headers{
   position: fixed;
     top: 25px;
     right: 40px;
+  display: flex;
 }
 
 #profile-icon{
@@ -88,7 +89,16 @@ h4.nav-headers{
   border-radius: 50%;
   background-color: #251d2e50;
   color: white;
-  margin-right: 10px;
+}
+
+#profile-icon, #profile-plus-icon{
+  /* margin: 0px 5px; */
+}
+
+.horizontal-account-break{
+  height: 30px;
+  border: solid rgb(255, 255, 255, .2) 1px;
+  margin: 0px 20px;
 }
 
 #logout-button{
