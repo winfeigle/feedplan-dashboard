@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import {UserContext} from "../context/UserContext";
 import Button from "react-bootstrap/esm/Button";
 
-import profile from "../assets/icons/profile_icon.png"
-
 export default function Account(){
     const { user } = useContext(UserContext);
 

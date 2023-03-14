@@ -22,7 +22,7 @@ function Navigation(){
               <a>▨  Menu Items</a>
             </div>
           </div>
-          <Button id="logout-button" variant="outline-dark" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
+          <Button id="logout-button" variant="outline-feedplan-purple" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
         </nav>
     );
 }
