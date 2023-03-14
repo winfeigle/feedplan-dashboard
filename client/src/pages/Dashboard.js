@@ -12,7 +12,6 @@ const Dashboard = () =>{
         <Account />
         <Navigation />
         <div id="app-dashboard">
-            <Router>
                 <div id="page-content-container">
                     <Routes>
                     <Route 
@@ -25,7 +24,6 @@ const Dashboard = () =>{
                         />
                     </Routes>
                 </div>
-            </Router>
             </div>
     </div>
     );

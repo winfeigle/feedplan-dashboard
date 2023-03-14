@@ -36,7 +36,7 @@ const RestaurantCard = ({ restaurant }) => {
                     <b>{restaurant.name}</b>
                     <Badge 
                         className="status-badge" 
-                        bg={restaurant.live ? "feedplan-purple" : "secondary"}>{restaurant.live ? "Live" : "Unpublished"}
+                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Unpublished"}
                     </Badge>
                 </div>
                 <div className="restaurant-info">

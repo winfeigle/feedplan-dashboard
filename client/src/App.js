@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 // import SignupForm from './components/SignupForm';
 import Dashboard from './pages/Dashboard';
@@ -24,7 +25,13 @@ function App() {
       </RestaurantsProvider>
       : 
       <div id="login-forms">
-        <LoginForm />
+        <Routes>
+          <Route
+            element={<LoginForm />}
+            path="/login"
+            >
+          </Route>
+        </Routes>
         {/* <SignupForm handleLogin={onLogin}/> */}
       </div> }
     </div>
