@@ -1,6 +1,5 @@
 import React from "react";
 import { Badge, Button } from 'react-bootstrap';
-import MealplanCarousel from "./MealplanCarousel";
 
 
 const RestaurantCard = ({ restaurant }) => {
