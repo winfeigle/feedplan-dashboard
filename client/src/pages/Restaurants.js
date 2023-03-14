@@ -34,11 +34,6 @@ export default function Restaurants(){
                     {renderRestaurantCards}
                     {renderRestaurantCards}
                     {renderRestaurantCards}
-                    {renderRestaurantCards}
-                    {renderRestaurantCards}
-                    {renderRestaurantCards}
-                    {renderRestaurantCards}
-                    {renderRestaurantCards}
                 </div>
             <Button variant="outline-feedplan-dark">
                 Add another restaurant

@@ -185,6 +185,7 @@ h4.nav-headers{
 
 .restaurant-card:hover{
   background-color: #f4f4fe;
+  display: flex;
 }
 
 .card-headings{
@@ -215,5 +216,4 @@ span.restaurant-address {
   color: #665BF7;
 }
 
-
-
+/* TESTING MEALPLAN CAROUSEL STYLES */

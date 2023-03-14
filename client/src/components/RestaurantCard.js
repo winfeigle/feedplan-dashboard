@@ -1,5 +1,6 @@
 import React from "react";
 import { Badge, Button } from 'react-bootstrap';
+import MealplanCarousel from "./MealplanCarousel";
 
 
 const RestaurantCard = ({ restaurant }) => {
@@ -46,8 +47,8 @@ const RestaurantCard = ({ restaurant }) => {
                     </span>
                     {formatAddress()}
                 </div>
-                <div className="mealplans-carousel">
-
+                <div className="restaurant-mealplans">
+                    {/* Meal plans elements to go here */}
                 </div>
                 <div className="restaurant-button-group">
                     <Button variant="outline-feedplan-dark-mist">Menu Items</Button>
