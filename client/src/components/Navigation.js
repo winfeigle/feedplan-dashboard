@@ -14,16 +14,16 @@ function Navigation(){
           <div id="navbar-logo-container">
             <img id="navbar-logo" src={logo} alt="home logo"/>
           </div>
-          <div id="navigation-links-TEMPORARY">
+          <div id="navigation-links-container">
             <h4 className="nav-headers">MAIN MENU</h4>
-            <div>
-              <p>▨  Dashboard</p>
-              <p>▨  Restaurants</p>
-              <p>▨  Meal Plans</p>
-              <p>▨  Menu Items</p>
+            <div id="navigation-links">
+              <a>▨  Dashboard</a>
+              <a href="/restaurants">▨  Restaurants</a>
+              <a href="/meal-plans">▨  Meal Plans</a>
+              <a>▨  Menu Items</a>
             </div>
           </div>
-          <Button id="logout-button" variant="outline-primary" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
+          <Button id="logout-button" variant="outline-dark" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
         </nav>
       </>
     );

@@ -43,8 +43,29 @@ h4.nav-headers{
     height: 2rem;
   }
 
-#navigation-links-TEMPORARY{
+#navigation-links-container{
   margin-top: 3rem;
+}
+
+#navigation-links{
+  display: flex;
+  flex-direction: column;
+}
+
+#navigation-links a {
+  color: #251d2e95;
+  text-decoration: none;
+  margin-top: .5rem;
+  padding: 7px;
+  transition: 500ms;
+}
+
+#navigation-links a:hover {
+  color: #251d2e;
+  background-color: #f4f4fe;
+  padding: -7px;
+  border-radius: 5px;
+  transition: 200ms;
 }
 
 #static-account-container{
@@ -63,7 +84,8 @@ h4.nav-headers{
 }
 
 #logout-button{
-  justify-self: end;
+  position: fixed;
+  bottom: 25px;
 }
 
 #page-content-container{

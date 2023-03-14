@@ -20,8 +20,12 @@ const Dashboard = () =>{
                 <div id="page-content-container">
                     <Routes>
                     <Route 
-                        path="/restaurants" 
                         element={<Restaurants />} 
+                        path="/restaurants" 
+                        />
+                    <Route 
+                        path="/meal-plans" 
+                        // element={} 
                         />
                     </Routes>
                 </div>
