@@ -2,26 +2,30 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Navigation from '../components/Navigation';
-import Restaurants from '../pages/Restaurants';
+import Restaurants from './Restaurants';
+import Account from "./Account";
 
 const Dashboard = () =>{
 
     return(
-    <div>
+    <div id="dashboard-container">
         <Router>
-        <div id="app-dashboard">
-            <div>
+            <div id="navbar-container">
                 <Navigation />
             </div>
-            <div id="page-content-container">
-                <Routes>
-                <Route 
-                    path="/" 
-                    element={<Restaurants />} 
-                    />
-                </Routes>
+            <div id="static-account-container">
+                <Account />
             </div>
-        </div>
+            <div id="app-dashboard">
+                <div id="page-content-container">
+                    <Routes>
+                    <Route 
+                        path="/restaurants" 
+                        element={<Restaurants />} 
+                        />
+                    </Routes>
+                </div>
+            </div>
         </Router>
     </div>
     );

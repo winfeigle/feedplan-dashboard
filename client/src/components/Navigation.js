@@ -9,7 +9,7 @@ function Navigation(){
     const { user, logoutUser } = useContext(UserContext);
 
     return(
-      <div id="navbar-container">
+      <>
         <nav id="navbar">
           <div id="navbar-logo-container">
             <img id="navbar-logo" src={logo} alt="home logo"/>
@@ -25,7 +25,7 @@ function Navigation(){
           </div>
           <Button id="logout-button" variant="outline-primary" onClick={logoutUser}>{`Log out @${user.username}`}</Button>
         </nav>
-      </div>
+      </>
     );
 }
 

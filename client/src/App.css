@@ -47,6 +47,20 @@ h4.nav-headers{
   margin-top: 3rem;
 }
 
+#static-account-container{
+  /* background-color: #665BF7; */
+  height: 100px;
+  width: 200px;
+  position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(-10%, 10%);
+}
+
+#profile-icon{
+  height: 25px;
+}
+
 #logout-button{
   justify-self: end;
 }
