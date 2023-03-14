@@ -5,10 +5,6 @@ import Navigation from '../components/Navigation';
 import Restaurants from './Restaurants';
 import Account from "./Account";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 const Dashboard = () =>{
 
     return(
