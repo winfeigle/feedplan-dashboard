@@ -14,18 +14,18 @@ const Dashboard = () =>{
         <div id="app-dashboard">
                 <div id="page-content-container">
                     <Routes>
-                    <Route 
-                        // element={<Restaurants />} 
-                        path="/dashboard" 
-                        />
-                    <Route 
-                        element={<Restaurants />} 
-                        path="/restaurants" 
-                        />
-                    <Route 
-                        path="/meal-plans" 
-                        // element={} 
-                        />
+                        <Route 
+                            // element={<Restaurants />} 
+                            path="/dashboard" 
+                            />
+                        <Route 
+                            element={<Restaurants />} 
+                            path="/restaurants" 
+                            />
+                        <Route 
+                            path="/meal-plans" 
+                            // element={} 
+                            />
                     </Routes>
                 </div>
             </div>

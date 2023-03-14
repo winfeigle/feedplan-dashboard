@@ -1,9 +1,11 @@
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
     const [ user, setUser ] = useState(null);
+    const navigate = useNavigate();
 
     const loadUser = () => {
     fetch('/me')
@@ -32,6 +34,7 @@ const UserProvider = ({ children }) => {
             if(r.ok){
                 r.json().then(data => setUser(data.user));
                 loadUser();
+                navigate('/dashboard')
             } else{
                 r.json().then((err) => console.log(`${Object.keys(err)}: ${Object.values(err)}`))
             }
@@ -44,6 +47,7 @@ const UserProvider = ({ children }) => {
             }).then((r) => {
                 if (r.ok) {
                     setUser(null);
+                    navigate('/login')
                 }
             })
         }
