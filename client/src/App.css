@@ -37,7 +37,6 @@ h4.nav-headers{
 
 #app-dashboard{
   grid-area: dashboard;
-  margin-left: 2rem;
 }
 
 #navbar{
@@ -87,7 +86,7 @@ h4.nav-headers{
 #static-account-container{
   position: fixed;
     top: 25px;
-    right: 40px;
+    right: 3rem;
   display: flex;
 }
 
@@ -158,21 +157,26 @@ h4.nav-headers{
   transition: 200ms;
 }
 
-.restaurants-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.restaurants-page{
+  display: flexbox;
+  margin: 2rem 3rem;
 }
 
-.restaurant-card-TEST{
+.restaurants-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.restaurant-card{
   display: flex;
     align-items: center;
-    justify-content: center;
-  /* border: solid black 1px; */
-  background-color: white;
-  width: 200px;
+    justify-content: start;
+  border: dotted #251d2e2d 2.5px;
+  margin: 0rem 2rem 1rem 0rem;
+  width: 30%;
+  min-width: 300px;
+  max-width: 500px;
   height: 100px;
   border-radius: 5px;
 }
