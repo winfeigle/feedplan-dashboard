@@ -80,7 +80,6 @@ h4.nav-headers{
   background-color: #f4f4fe;
   padding: -7px;
   border-radius: 5px;
-  transition: 200ms;
 }
 
 #static-account-container{
@@ -154,7 +153,6 @@ h4.nav-headers{
 
 .form-submit-button:hover{
   background-color: #251D2E;
-  transition: 200ms;
 }
 
 .restaurants-page{
@@ -172,13 +170,52 @@ h4.nav-headers{
   display: flex;
     align-items: center;
     justify-content: start;
+    flex-wrap: wrap;
   border: dotted #251d2e2d 2.5px;
   margin: 0rem 2rem 1rem 0rem;
+  padding: 1rem;
   width: 30%;
   min-width: 300px;
   max-width: 500px;
-  height: 100px;
   border-radius: 5px;
+  transition: 200ms;
 }
+
+.restaurant-card:hover{
+  background-color: #f4f4fe;
+}
+
+.card-headings{
+  display: flex;
+  align-items: center;
+}
+
+.status-badge{
+  margin-left: 1rem;
+}
+
+div.restaurant-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.restaurant-info > span {
+  margin-top: 1rem;
+}
+
+span.restaurant-description{
+  font-size: .9rem;
+  color: #251d2e9a;
+}
+
+span.restaurant-address {
+  font-size: .8rem;
+  color: #665BF7;
+}
+
+div.mealplans-carousel{
+  /* Implement carousel for meal plans like app */
+}
+
 
 
