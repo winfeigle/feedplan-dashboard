@@ -20,7 +20,7 @@ const RestaurantCard = ({ restaurant }) => {
                     </Badge>
                 </div>
                 <div className="card-headings">
-                    <img 
+                    <img
                         id="restaurant-icon"
                         src={restaurant.icon_url} 
                         alt="restaurant logo"
@@ -43,7 +43,7 @@ const RestaurantCard = ({ restaurant }) => {
                     {/* Meal plans elements to go here */}
                 </div>
                 <div className="restaurant-button-group">
-                    <Button variant="outline-feedplan-dark-mist">Menu Items</Button>
+                    <Button variant="outline-feedplan-dark">Menu Items</Button>
                 </div>
         </div>
     );

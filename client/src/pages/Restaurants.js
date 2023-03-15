@@ -28,24 +28,27 @@ export default function Restaurants(){
 
     return(
         <div className="restaurants-page">
-            <h2 className="dashboard-heading" 
-            variant="feedplan-dark-mist">
-                Restaurants</h2>
-
+            <div className="dashboard-heading">
+                <h2 variant="feedplan-dark-mist">Restaurants</h2>
+                <Button
+                    id="add-restaurant-button"
+                    variant="outline-feedplan-dark" onClick={() => setModalShow(true)}
+                    >
+                    create new
+                </Button>
+            <div>
+                    
+                </div>
+                
+            </div>
                 <div className="restaurants-container">
                     {renderRestaurantCards}
                 </div>
                 <div>
-                    <Button
-                        variant="outline-feedplan-dark" onClick={() => setModalShow(true)}
-                        style={{ marginTop: "3rem"}}>
-                        Create Restaurant
-                    </Button>
-
                     <CreateRestaurantModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
-                    />
+                        />
                 </div>
         </div>
     );

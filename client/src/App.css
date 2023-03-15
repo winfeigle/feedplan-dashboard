@@ -12,11 +12,22 @@ h1, h2, h3, h4{
   font-family: Helvetica, Arial, sans-serif;
 }
 
-h2.dashboard-heading{
+.dashboard-heading{
+  display: flex;
+  justify-content: flex-start;
+  /* align-content: center; */
+  margin-bottom: 2rem;
+}
+
+#add-restaurant-button{
+  margin: -2px 1rem 10px;
+}
+
+.dashboard-heading h2{
   font-weight: bold;
   font-size: 1.75rem;
-  margin-bottom: 3rem;
 }
+
 
 h4.nav-headers{
   font-size: .75rem;
@@ -164,7 +175,7 @@ h4.nav-headers{
 
 .restaurants-container{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
 }
