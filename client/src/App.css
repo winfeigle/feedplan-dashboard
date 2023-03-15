@@ -164,6 +164,7 @@ h4.nav-headers{
 
 .restaurants-container{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
 }

@@ -21,7 +21,10 @@ const CreateRestaurantModal = (props) => {
         })
     }
 
-    console.log(restaurantData)
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        console.log(restaurantData)
+    }
 
     return(
         <Modal
@@ -36,7 +39,7 @@ const CreateRestaurantModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form>
+                <Form onSubmit={handleFormSubmit}>
                     <Row>
                         <Col>
                             <Form.Group 
@@ -91,7 +94,7 @@ const CreateRestaurantModal = (props) => {
                                 <div id="restaurant-preview-container">
                                     <img 
                                         className={restaurantData.image_url ? "restaurant-image-preview" : "image-placeholder"} 
-                                        alt="Restaurant image preview"
+                                        alt="Restaurant feature preview"
                                         src={restaurantData.image_url}
                                         />
                                 </div>
@@ -123,6 +126,7 @@ const CreateRestaurantModal = (props) => {
                     <Button variant="feedplan-purple" type="submit">
                         Submit
                     </Button>
+                    <Button variant="outline-feedplan-dark" onClick={props.onHide} className="mx-1">Cancel</Button>
                 </Form>
             </Modal.Body>
             <Modal.Footer>

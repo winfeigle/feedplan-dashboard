@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :admins, only: [ :index ]
-  resources :restaurants, only: [ :index, :show ]
+  resources :restaurants, only: [ :index, :show, :create ]
 
 
   get '/me', to: 'admins#show'
