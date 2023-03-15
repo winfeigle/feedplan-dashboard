@@ -14,6 +14,15 @@ const CreateRestaurantModal = (props) => {
         icon_url: ""
     });
 
+    const handleFormChange = (e) =>{
+        setRestaurantData({
+            ...restaurantData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    console.log(restaurantData)
+
     return(
         <Modal
             {...props}
@@ -31,25 +40,35 @@ const CreateRestaurantModal = (props) => {
                     <Row>
                         <Col>
                             <Form.Group 
-                                className="mb-3" controlId="formRestauarantName"
+                                className="mb-3" 
+                                controlId="formRestauarantName"
+                                onChange={handleFormChange}
                                 >
                                 <Form.Label>Restaurant Name</Form.Label>
                                 <Form.Control 
                                     type="text" 
+                                    name="name"
                                     />
                             </Form.Group>
                             <Form.Group 
                                 className="mb-3" controlId="formRestauarantDescription"
+                                onChange={handleFormChange}
                                 >
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control as="textarea" />
+                                <Form.Control 
+                                    as="textarea" 
+                                    name="description"
+                                    />
                             </Form.Group>
                             <Form.Group 
-                                className="mb-3" controlId="formRestauarantAddress"
+                                className="mb-3" 
+                                controlId="formRestauarantAddress"
+                                onChange={handleFormChange}
                                 >
                                 <Form.Label>Address</Form.Label>
                                 <Form.Control 
-                                    type="text" 
+                                    type="text"
+                                    name="address"
                                     placeholder="Street, City, State ZIP" 
                                     />
                             </Form.Group>
@@ -59,11 +78,14 @@ const CreateRestaurantModal = (props) => {
                     <Row>
                         <Col>
                             <Form.Group 
-                                className="mb-3" controlId="formRestauarantImage"
+                                className="mb-3" 
+                                controlId="formRestauarantImage"
+                                onChange={handleFormChange}
                                 >
                                 <Form.Label>Feature Image URL</Form.Label>
                                 <Form.Control 
-                                    type="text" 
+                                    type="text"
+                                    name="image_url"
                                     placeholder="paste link here" 
                                     />
                                 <div id="restaurant-preview-container">
@@ -77,12 +99,15 @@ const CreateRestaurantModal = (props) => {
                         </Col>
                         <Col>
                             <Form.Group 
-                                className="mb-3" controlId="formRestauarantLogo"
+                                className="mb-3" 
+                                controlId="formRestauarantLogo"
+                                onChange={handleFormChange}
                                 >
                                 <Form.Label>Logo URL</Form.Label>
                                 <Form.Control 
                                     type="text" 
-                                    placeholder="paste link here" 
+                                    name="icon_url"
+                                    placeholder="paste link here"
                                     />
                                     <div id="restaurant-preview-container">
                                         <img 
