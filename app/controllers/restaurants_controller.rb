@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-    skip_before_action :authorize, only: [ :index, :show ]
+    # skip_before_action :authorize, only: [ :create ]
 
     def index
         restaurants = Restaurant.all
@@ -12,7 +12,8 @@ class RestaurantsController < ApplicationController
     end
 
     def create
-        new_restaurant = Restaurant.create!(restaurant_params)
+        new_restaurant = @current_user.restaurants.create!(restaurant_params)
+
         render json: new_restaurant, status: :created
     end
 

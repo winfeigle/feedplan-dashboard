@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { RestaurantsContext } from "../context/RestaurantsContext";
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -6,13 +8,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const CreateRestaurantModal = (props) => {
-    const [ restaurantData, setRestaurantData ] = useState({
-        name: "",
-        description: "",
-        address: "",
-        image_url: "",
-        icon_url: ""
-    });
+    const [ restaurantData, setRestaurantData ] = useState({});
+
+    const { createRestaurant } = useContext(RestaurantsContext)
 
     const handleFormChange = (e) =>{
         setRestaurantData({
@@ -22,8 +20,9 @@ const CreateRestaurantModal = (props) => {
     }
 
     const handleFormSubmit = (e) => {
-        e.preventDefault()
-        console.log(restaurantData)
+        e.preventDefault();
+        createRestaurant(restaurantData);
+        setRestaurantData({});
     }
 
     return(

@@ -17,7 +17,13 @@ const RestaurantsProvider = ({ children }) => {
     }
 
     const createRestaurant = (restaurantData) =>{
-
+        fetch("/restaurants", {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(restaurantData)
+        })
     }
 
     return (
