@@ -11,7 +11,8 @@ const RestaurantCard = ({ restaurant }) => {
             key={restaurant.id}
             >
                 <div id="edit-button">
-                    <Button variant="dark">edit</Button>
+                    <Button variant="dark">edit
+                    </Button>
                 </div>
                 <div id="status-badge">
                     <Badge 

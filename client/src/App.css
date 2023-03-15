@@ -190,6 +190,7 @@ h4.nav-headers{
   opacity: 50%;
   bottom: 5px;
   right: 5px;
+  margin: 12px;
 }
 
 #status-badge{
