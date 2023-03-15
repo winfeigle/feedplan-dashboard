@@ -24,8 +24,6 @@ export default function Restaurants(){
         );
     });
 
-   
-
     return(
         <div className="restaurants-page">
             <div className="dashboard-heading">

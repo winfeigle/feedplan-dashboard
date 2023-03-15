@@ -15,7 +15,6 @@ h1, h2, h3, h4{
 .dashboard-heading{
   display: flex;
   justify-content: flex-start;
-  /* align-content: center; */
   margin-bottom: 2rem;
 }
 
@@ -80,15 +79,22 @@ h4.nav-headers{
   flex-direction: column;
 }
 
+.nav-icons{
+  filter: opacity(40%);
+  height: 20px;
+  width: 20px;
+  margin-right: 12px
+}
+
 #navigation-links a {
   color: #251d2e95;
   text-decoration: none;
   margin-top: .5rem;
-  padding: 7px;
+  padding: 10px;
   transition: 500ms;
 }
 
-#navigation-links a:hover {
+#navigation-links a:hover{
   color: #251d2e;
   background-color: #f4f4fe;
   padding: -7px;
@@ -186,14 +192,19 @@ h4.nav-headers{
     justify-content: flex-start;
     flex-wrap: wrap;
   border: dotted #251d2e2d 2.5px;
+  background-color: #f5f5f7;
   margin: 0rem 2rem 1rem 0rem;
   padding: 1rem;
   width: 30%;
   min-width: 300px;
   max-width: 500px;
-  border-radius: 5px;
+  border-radius: 1rem;
   transition: 200ms;
   position: relative;
+}
+
+#live.restaurant-card{
+  background-color: white;
 }
 
 #edit-button{
@@ -211,8 +222,7 @@ h4.nav-headers{
 }
 
 .restaurant-card:hover{
-  background-color: #ffffff51;
-  display: flex;
+  box-shadow: 0px 2px 6px #e0e0e0;
 }
 
 .card-headings{

@@ -7,6 +7,7 @@ const RestaurantCard = ({ restaurant }) => {
 
     return(
         <div 
+            id={restaurant.live && "live"}
             className="restaurant-card"
             key={restaurant.id}
             >
