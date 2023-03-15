@@ -12,6 +12,7 @@ const RestaurantCard = ({ restaurant }) => {
             >
                 <div className="card-headings">
                     <img 
+                        id="restaurant-icon"
                         src={restaurant.icon_url} 
                         alt="restaurant logo"
                         style={{
@@ -23,7 +24,7 @@ const RestaurantCard = ({ restaurant }) => {
                     <b>{restaurant.name}</b>
                     <Badge 
                         className="status-badge" 
-                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Unpublished"}
+                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
                     </Badge>
                 </div>
                 <div className="restaurant-info">

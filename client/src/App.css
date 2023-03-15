@@ -194,6 +194,10 @@ h4.nav-headers{
   align-items: center;
 }
 
+#restaurant-icon{
+  aspect-ratio: 1/1;
+}
+
 .status-badge{
   margin-left: 1rem;
 }
