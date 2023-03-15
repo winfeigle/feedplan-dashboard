@@ -10,8 +10,8 @@ const CreateRestaurantModal = (props) => {
         name: "",
         description: "",
         address: "",
-        image_url: "https://images.adsttc.com/media/images/5b22/d9cf/f197/ccfa/2700/010f/large_jpg/06075_140925-002D.jpg?1529010631",
-        icon_url: "https://images-platform.99static.com//RW9-kVTp4GR23eftyg50vq5eefw=/255x59:945x748/fit-in/500x500/99designs-contests-attachments/85/85356/attachment_85356234"
+        image_url: "",
+        icon_url: ""
     });
 
     return(

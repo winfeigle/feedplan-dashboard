@@ -224,11 +224,12 @@ span.restaurant-address {
 .image-placeholder{
   margin-top: 1rem;
   padding: 5px;
-  border: dashed #bdbdbd 2px;
+  border: dashed #d7d7d7 2px;
+  border-radius: 5px;
   width: 100%;
   height: 100%;
-  background-color: #d7d7d7;
-  color: #979797;
+  background-color: #f2f2f2;
+  color: #bcbcbc;
   text-align: center;
 }
 
