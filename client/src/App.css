@@ -216,4 +216,9 @@ span.restaurant-address {
   color: #665BF7;
 }
 
-/* TESTING MEALPLAN CAROUSEL STYLES */
+.restaurant-image-preview{
+  width: 100%;
+  padding: 1rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}

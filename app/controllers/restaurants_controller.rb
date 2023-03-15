@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
     private
 
     def restaurant_params
-        params.permit(:name, :description, :image_url, :icon_url, :address, :admin_id)
+        params.permit(:name, :description, :image_url, :icon_url, :address)
     end
 
 end
