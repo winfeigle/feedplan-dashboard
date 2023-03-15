@@ -10,8 +10,8 @@ const CreateRestaurantModal = (props) => {
         name: "",
         description: "",
         address: "",
-        image_url: "https://media.cntraveler.com/photos/611164da7467f3ce5f02f63c/master/w_1080,h_810,c_limit/Work%20&%20Class,%20Denver_222889720_551963972502510_7409480855517024306_n.jpg",
-        icon_url: "https://images.vexels.com/content/229492/preview/sushi-bar-logo-template-900c33.png"
+        image_url: "https://images.adsttc.com/media/images/5b22/d9cf/f197/ccfa/2700/010f/large_jpg/06075_140925-002D.jpg?1529010631",
+        icon_url: "https://images-platform.99static.com//RW9-kVTp4GR23eftyg50vq5eefw=/255x59:945x748/fit-in/500x500/99designs-contests-attachments/85/85356/attachment_85356234"
     });
 
     return(
@@ -66,7 +66,13 @@ const CreateRestaurantModal = (props) => {
                                     type="text" 
                                     placeholder="paste link here" 
                                     />
-                                <img className="restaurant-image-preview" alt="[Restaurant image preview]" src={restaurantData.image_url}/>
+                                <div id="restaurant-preview-container">
+                                    <img 
+                                        className={restaurantData.image_url ? "restaurant-image-preview" : "image-placeholder"} 
+                                        alt="Restaurant image preview"
+                                        src={restaurantData.image_url}
+                                        />
+                                </div>
                             </Form.Group>
                         </Col>
                         <Col>
@@ -78,7 +84,13 @@ const CreateRestaurantModal = (props) => {
                                     type="text" 
                                     placeholder="paste link here" 
                                     />
-                                <img className="restaurant-image-preview" alt="[Restaurant logo preview]" src={restaurantData.icon_url}/>
+                                    <div id="restaurant-preview-container">
+                                        <img 
+                                            className={restaurantData.icon_url ? "restaurant-icon-preview" : "image-placeholder"} 
+                                            alt="Restaurant icon preview"
+                                            src={restaurantData.icon_url}
+                                            />
+                                    </div>
                             </Form.Group>
                         </Col>
                     </Row>

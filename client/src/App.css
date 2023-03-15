@@ -216,9 +216,36 @@ span.restaurant-address {
   color: #665BF7;
 }
 
+#restaurant-preview-container{
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder{
+  margin-top: 1rem;
+  padding: 5px;
+  border: dashed #bdbdbd 2px;
+  width: 100%;
+  height: 100%;
+  background-color: #d7d7d7;
+  color: #979797;
+  text-align: center;
+}
+
+.restaurant-image-preview, .restaurant-icon-preview{
+  object-fit: cover;
+  margin-top: 1rem;
+  border: dashed #bdbdbd 2px;
+}
+
 .restaurant-image-preview{
   width: 100%;
-  padding: 1rem;
   aspect-ratio: 16/9;
-  object-fit: cover;
+}
+
+.restaurant-icon-preview {
+  width: 35%;
+  height: 35%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }
