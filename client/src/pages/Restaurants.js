@@ -34,8 +34,6 @@ export default function Restaurants(){
 
                 <div className="restaurants-container">
                     {renderRestaurantCards}
-                    {renderRestaurantCards}
-                    {renderRestaurantCards}
                 </div>
                 <div>
                     <Button
