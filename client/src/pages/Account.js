@@ -16,7 +16,7 @@ export default function Account(){
                     alignContent: "center" }}
                 >
                 <div id="profile-icon">{user.username[0].toUpperCase()}</div> 
-                    <div className="horizontal-account-break"></div>
+                    <div className="vertical-account-break"></div>
                 <div id="profile-plus-icon">＋</div>
             </Button>
         </div>

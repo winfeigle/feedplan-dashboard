@@ -10,6 +10,14 @@ const RestaurantCard = ({ restaurant }) => {
             className="restaurant-card"
             key={restaurant.id}
             >
+                <div id="edit-button">
+                    <Button variant="dark">edit</Button>
+                </div>
+                <div id="status-badge">
+                    <Badge 
+                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
+                    </Badge>
+                </div>
                 <div className="card-headings">
                     <img 
                         id="restaurant-icon"
@@ -22,10 +30,6 @@ const RestaurantCard = ({ restaurant }) => {
                             }}
                         />
                     <b>{restaurant.name}</b>
-                    <Badge 
-                        className="status-badge" 
-                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
-                    </Badge>
                 </div>
                 <div className="restaurant-info">
                     <span className="restaurant-description">
@@ -33,6 +37,7 @@ const RestaurantCard = ({ restaurant }) => {
                     </span>
                     <FormatAddress rawAddress={restaurant.address}/>
                 </div>
+            <div className="horizontal-line-break"></div>
                 <div className="restaurant-mealplans">
                     {/* Meal plans elements to go here */}
                 </div>
