@@ -47,7 +47,7 @@ const UserProvider = ({ children }) => {
             }).then((r) => {
                 if (r.ok) {
                     setUser(null);
-                    navigate('/login')
+                    navigate('/')
                 }
             })
         }

@@ -24,16 +24,17 @@ function App() {
         <Dashboard />
       </RestaurantsProvider>}
       
-      {!user && <div id="login-forms">
-        <Routes>
-          <Route
-            element={<LoginForm />}
-            path="/login"
-            >
-          </Route>
-        </Routes>
-        {/* <SignupForm handleLogin={onLogin}/> */}
-      </div> }
+      {!user && 
+        <div id="login-forms">
+          <Routes>
+            <Route
+              element={<LoginForm />}
+              path="/"
+              >
+            </Route>
+          </Routes>
+          {/* <SignupForm handleLogin={onLogin}/> */}
+        </div> }
     </div>
   );
 }
