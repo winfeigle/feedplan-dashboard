@@ -113,8 +113,8 @@ const CreateRestaurantModal = (props) => {
                                     />
                                     <div id="restaurant-preview-container">
                                         <img 
-                                            className={restaurantData.icon_url ? "restaurant-icon-preview" : "image-placeholder"} 
-                                            alt="Restaurant icon preview"
+                                            className={restaurantData.icon_url ? "restaurant-icon-preview" : "icon-placeholder"} 
+                                            alt="logo preview"
                                             src={restaurantData.icon_url}
                                             />
                                     </div>
