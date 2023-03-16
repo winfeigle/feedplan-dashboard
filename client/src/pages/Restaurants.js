@@ -30,7 +30,8 @@ export default function Restaurants(){
                 <h2 variant="feedplan-dark-mist">Restaurants</h2>
                 <Button
                     id="add-restaurant-button"
-                    variant="outline-feedplan-dark" onClick={() => setModalShow(true)}
+                    variant="outline-feedplan-dark" 
+                    onClick={() => setModalShow(true)}
                     >
                     create new
                 </Button>

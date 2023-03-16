@@ -18,7 +18,7 @@ h1, h2, h3, h4{
   margin-bottom: 2rem;
 }
 
-#add-restaurant-button{
+#add-restaurant-button, #add-mealplan-button{
   margin: -2px 1rem 10px;
 }
 
@@ -174,12 +174,12 @@ h4.nav-headers{
   background-color: #251D2E;
 }
 
-.restaurants-page{
+.restaurants-page, .mealplans-page{
   display: flexbox;
   margin: 2rem 3rem;
 }
 
-.restaurants-container{
+.restaurants-container, .mealplans-container{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;

@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import DashLanding from "../components/DashLanding";
 import Navigation from '../components/Navigation';
-import Restaurants from './Restaurants';
 import Account from "../components/Account";
+import DashLanding from "../components/DashLanding";
+import Restaurants from './Restaurants';
+import MealPlans from "./MealPlans";
 
 const Dashboard = () =>{
 
@@ -25,7 +26,7 @@ const Dashboard = () =>{
                             />
                         <Route 
                             path="/meal-plans" 
-                            // element={} 
+                            element={<MealPlans />} 
                             />
                     </Routes>
                 </div>
