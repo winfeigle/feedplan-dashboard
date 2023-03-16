@@ -7,8 +7,8 @@ import { Button } from "react-bootstrap";
 import CreateRestaurantModal from "../components/CreateRestaurantModal";
 
 export default function Restaurants(){
-    const { user } = useContext(UserContext)
-    const { restaurants, loadRestaurants } = useContext(RestaurantsContext)
+    const { user } = useContext(UserContext);
+    const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
     const [modalShow, setModalShow] = useState(false);
 
     useEffect(() => {

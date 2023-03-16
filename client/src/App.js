@@ -8,6 +8,7 @@ import { UserContext } from './context/UserContext';
 import { RestaurantsProvider } from './context/RestaurantsContext';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { MealPlansProvider } from './context/MealPlansContext';
 
 function App() {
   const { loadUser, user } = useContext(UserContext);
@@ -20,9 +21,11 @@ function App() {
   return (
     <div>
       { user &&
-      <RestaurantsProvider>
-        <Dashboard />
-      </RestaurantsProvider>}
+      <MealPlansProvider>
+        <RestaurantsProvider>
+          <Dashboard />
+        </RestaurantsProvider>
+      </MealPlansProvider>}
       
       {!user && 
         <div id="login-forms">

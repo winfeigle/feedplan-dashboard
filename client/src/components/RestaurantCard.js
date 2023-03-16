@@ -35,7 +35,7 @@ const RestaurantCard = ({ restaurant }) => {
                 </div>
                 <div className="restaurant-info">
                     <span className="restaurant-description">
-                        {restaurant.description.slice(0,100) + '... '}
+                        {restaurant.description.length >= 100 ? restaurant.description.slice(0,100) + '... ' : restaurant.description}
                     </span>
                     <FormatAddress rawAddress={restaurant.address}/>
                 </div>

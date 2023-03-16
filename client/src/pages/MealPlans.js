@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { MealPlansContext } from "../context/MealPlansContext";
 
 export default function MealPlans(){
 
-    MealPlans.componentName = "MealPlans";
+    const { loadRestaurantMealPlans } = useContext(MealPlansContext);
+    
+    console.log(MealPlans);
 
-    console.log(MealPlans.componentName)
+    useEffect(() => {
+        loadRestaurantMealPlans(1)
+    }, [])
+    
 
     return(
          <div className="page">

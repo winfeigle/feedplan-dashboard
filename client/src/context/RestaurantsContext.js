@@ -11,7 +11,8 @@ const RestaurantsProvider = ({ children }) => {
                 if(res.ok){
                     res.json().then(setRestaurants)
                 }else{
-                    console.log("Something went wrong")
+                    // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                    console.log("Something went wrong with restaurants fetch...")
                 }
             })
     }
