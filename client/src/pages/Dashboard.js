@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import DashLanding from "../components/DashLanding";
 import Navigation from '../components/Navigation';
 import Restaurants from './Restaurants';
-import Account from "./Account";
+import Account from "../components/Account";
 
 const Dashboard = () =>{
 
