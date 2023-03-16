@@ -33,6 +33,14 @@ Restaurant.create!(
     live: false
     )
 
+MealPlan.create!(
+    name: "Small",
+    quantity: "5",
+    total_price: "55",
+    visible: false,
+    restaurant_id: Restaurant.find_by(name: "Cosmic Food Hall").id,
+)
+
 
 
 
