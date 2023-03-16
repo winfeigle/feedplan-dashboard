@@ -3,12 +3,16 @@ import { Button } from "react-bootstrap";
 
 export default function MealPlans(){
 
+    MealPlans.componentName = "MealPlans";
+
+    console.log(MealPlans.componentName)
+
     return(
-         <div className="mealplans-page">
+         <div className="page">
             <div className="dashboard-heading">
                 <h2 variant="feedplan-dark-mist">Meal Plans</h2>
                 <Button
-                    id="add-mealplan-button"
+                    id="add-button"
                     variant="outline-feedplan-dark"
                     >
                     create new
@@ -18,7 +22,7 @@ export default function MealPlans(){
                 </div>
                 
             </div>
-                <div className="mealplans-container">
+                <div className="page-container">
                 </div>
         </div>
     );

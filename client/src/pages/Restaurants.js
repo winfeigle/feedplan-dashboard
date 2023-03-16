@@ -25,11 +25,11 @@ export default function Restaurants(){
     });
 
     return(
-        <div className="restaurants-page">
+        <div className="page">
             <div className="dashboard-heading">
                 <h2 variant="feedplan-dark-mist">Restaurants</h2>
                 <Button
-                    id="add-restaurant-button"
+                    id="add-button"
                     variant="outline-feedplan-dark" 
                     onClick={() => setModalShow(true)}
                     >
@@ -40,7 +40,7 @@ export default function Restaurants(){
                 </div>
                 
             </div>
-                <div className="restaurants-container">
+                <div className="page-container">
                     {renderRestaurantCards}
                 </div>
                 <div>
