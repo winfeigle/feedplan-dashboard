@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { MealPlansContext } from "../context/MealPlansContext";
+import MealPlanCard from "../components/MealPlanCard";
 
 export default function MealPlans(){
 
