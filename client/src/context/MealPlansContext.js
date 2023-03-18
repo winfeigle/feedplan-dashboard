@@ -6,7 +6,7 @@ const MealPlansProvider = ({ children }) => {
     const [ mealPlans, setMealPlans ] = useState([]);
 
     const loadRestaurantMealPlans = (restaurant_id) => {
-        fetch(`/admin/${restaurant_id}/meal-plans`)
+        fetch(`/meal-plans`)
             .then((res) => {
                 if(res.ok){
                     res.json().then(setMealPlans)

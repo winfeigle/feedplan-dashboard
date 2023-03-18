@@ -7,6 +7,7 @@ export default function MealPlanCard({ mealplan }){
             <p>{`Name: ${mealplan.name}`}</p>
             <p>{`Quantity: ${mealplan.quantity}`}</p>
             <p>{`Price: ${mealplan.price}`}</p>
+            <span>{`Price: ${mealplan.price}`}</span>
         </div>
     );
 }

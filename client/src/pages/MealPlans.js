@@ -13,7 +13,7 @@ export default function MealPlans(){
 
     const renderMealPlanCards = mealPlans.map((plan) => {
         return(
-            <MealPlanCard mealplan={plan}/>
+            <MealPlanCard key={plan.id} mealplan={plan}/>
         );
     })
     

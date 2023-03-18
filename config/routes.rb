@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :admins, only: [ :index ]
   resources :restaurants, only: [ :index, :show, :create ]
-  resources :meal_plans, only: [ :index ]
 
 
   get '/me', to: 'admins#show'
@@ -12,6 +11,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/admin/:admin_id/restaurants", to: "admins#admin_restaurants"
+
+  get "/meal-plans", to: "meal_plans#index"
 
 
   # Routing logic: fallback requests for React Router.
