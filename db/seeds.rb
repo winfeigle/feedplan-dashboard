@@ -33,6 +33,7 @@ puts "Seeding in progress..."
 #     live: false
 #     )
 
+
 # MealPlan.create!(
 #     name: "Small",
 #     quantity: "5",
@@ -40,6 +41,24 @@ puts "Seeding in progress..."
 #     visible: false,
 #     admin_id: Admin.find_by(username: "win").id
 # )
+
+# MealPlan.create!(
+#     name: "Medium",
+#     quantity: "10",
+#     total_price: "95",
+#     visible: false,
+#     admin_id: Admin.find_by(username: "win").id
+# )
+
+# Restaurant.create!(
+#     name: "The Local",
+#     description: "Your snack time can never be complete without a cup of coffee at our shop..",
+#     image_url: "https://gmrencen.com/wp-content/uploads/2020/05/20190217CurtClayton0159b-1.jpg",
+#     icon_url: "https://cdn.dribbble.com/users/95644/screenshots/16000715/media/d5f78df332eed55b32e0df934acfc10c.jpg?compress=1&resize=400x300",
+#     address: "1600 16th St, Denver, CO 80204",
+#     admin_id: Admin.find_by(username: "win").id,
+#     live: false
+#     )
 
 
 

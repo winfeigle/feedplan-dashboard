@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :admins, only: [ :index ]
   resources :restaurants, only: [ :index, :show, :create ]
+  resources :restaurants_meal_plans, only: [ :create ]
 
 
   get '/me', to: 'admins#show'
