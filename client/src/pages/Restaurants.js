@@ -35,20 +35,18 @@ export default function Restaurants(){
                     >
                     create new
                 </Button>
-            <div>
-                    
-                </div>
-                
             </div>
-                <div className="page-container">
+
+            <div className="page-container">
                     {renderRestaurantCards}
-                </div>
-                <div>
-                    <CreateRestaurantModal
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                        />
-                </div>
+            </div>
+                
+            <div>
+                <CreateRestaurantModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    />
+            </div>
         </div>
     );
 }

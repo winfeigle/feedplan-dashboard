@@ -5,13 +5,17 @@ import MealPlanCard from "../components/MealPlanCard";
 
 export default function MealPlans(){
 
-    const { loadRestaurantMealPlans } = useContext(MealPlansContext);
-    
-    console.log(MealPlans);
+    const { loadRestaurantMealPlans, mealPlans } = useContext(MealPlansContext);
 
     useEffect(() => {
         loadRestaurantMealPlans(1)
     }, [])
+
+    const renderMealPlanCards = mealPlans.map((plan) => {
+        return(
+            <MealPlanCard mealplan={plan}/>
+        );
+    })
     
 
     return(
@@ -24,13 +28,11 @@ export default function MealPlans(){
                     >
                     create new
                 </Button>
-            <div>
-                    
-                </div>
                 
             </div>
-                <div className="page-container">
-                </div>
+            <div className="page-container">
+                { renderMealPlanCards }
+            </div>
         </div>
     );
 }
