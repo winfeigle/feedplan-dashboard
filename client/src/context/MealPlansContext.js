@@ -17,6 +17,10 @@ const MealPlansProvider = ({ children }) => {
             })
     }
 
+    const loadMealPlanAssignments = (meal_plan_id) =>{
+        fetch(`/meal-plans/${meal_plan_id}/assignments`)
+    }
+
 
     return(
         <MealPlansContext.Provider value={{ mealPlans, loadRestaurantMealPlans }}>

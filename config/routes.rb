@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :admins, only: [ :index ]
   resources :restaurants, only: [ :index, :show, :create ]
-  resources :restaurants_meal_plans, only: [ :create ]
+
 
 
   get '/me', to: 'admins#show'
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/admin/:admin_id/restaurants", to: "admins#admin_restaurants"
 
   get "/meal-plans", to: "meal_plans#index"
+
+  get "/meal-plans/assignments", to: "restaurants_meal_plan#index"
 
 
   # Routing logic: fallback requests for React Router.

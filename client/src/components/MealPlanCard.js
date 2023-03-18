@@ -3,6 +3,12 @@ import { Badge } from "react-bootstrap";
 
 export default function MealPlanCard({ mealplan }){
 
+    const assignedRestaurants = [];
+
+    // const renderMealPlanAssignments = mealplanAssignments.map((assignment) => {
+    //     assignment.meal_plan_id === mealplan.id && assignedRestaurants.push(assignment.name)
+    // })
+
     return(
         <div id={mealplan.visible ? "assigned" : "unassigned"}
             className="meal-plan-card"
@@ -15,7 +21,10 @@ export default function MealPlanCard({ mealplan }){
                 <p><b>Quantity: </b>{mealplan.quantity}</p>
                 <p><b>Price: </b>{`$${mealplan.total_price}`}</p>
             <div className="horizontal-line-break"></div>
-                <span>{`Restaurants: ${mealplan.restaurant_id}`}</span>
+            <b>Restaurants</b>
+
+                {/* MEALPLAN ASSIGNMENTS RENDERED BELOW */}
+                {/* <span>{ renderMealPlanAssignments }</span> */}
         </div>
     );
 }
