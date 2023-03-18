@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   get "/admin/:admin_id/restaurants", to: "admins#admin_restaurants"
 
-   get "/admin/:restaurant_id/meal-plans", to: "admins#admin_meal_plans"
-
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
