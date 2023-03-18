@@ -38,7 +38,7 @@ puts "Seeding in progress..."
 #     quantity: "5",
 #     total_price: "55",
 #     visible: false,
-#     restaurant_id: Restaurant.find_by(name: "Cosmic Food Hall").id,
+#     admin_id: Admin.find_by(username: "win").id
 # )
 
 

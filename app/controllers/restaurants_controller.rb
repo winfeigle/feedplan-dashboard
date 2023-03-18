@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
-    # skip_before_action :authorize, only: [ :create ]
+    validates :name, presence: true
+    
+    skip_before_action :authorize, only: [ :create ]
 
     def index
         restaurants = Restaurant.all
