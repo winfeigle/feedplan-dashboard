@@ -21,7 +21,7 @@ export default function MenusPage(){
             <div className="dashboard-heading">
                 <h2 variant="feedplan-dark-mist">Menus</h2>
             </div>
-            <div className="page-container">
+            <div className="menu-page-container">
                 { renderRestaurants }
             </div>
         </div>

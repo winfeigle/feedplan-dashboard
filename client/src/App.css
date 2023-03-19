@@ -186,6 +186,11 @@ h4.nav-headers{
   flex-direction: row;
 }
 
+.menu-page-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .restaurant-card{
   display: flex;
     align-items: center;
