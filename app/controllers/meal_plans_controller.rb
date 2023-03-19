@@ -4,5 +4,4 @@ class MealPlansController < ApplicationController
     def index
         render json: @current_user.meal_plans, status: :ok
     end
-
 end
