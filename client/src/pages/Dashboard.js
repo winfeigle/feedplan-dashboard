@@ -6,7 +6,7 @@ import Account from "../components/Account";
 import DashLanding from "../components/DashLanding";
 import Restaurants from './Restaurants';
 import MealPlans from "./MealPlans";
-import MenuItems from "./MenuItems";
+import MenusPage from "./MenusPage";
 
 const Dashboard = () =>{
 
@@ -18,20 +18,20 @@ const Dashboard = () =>{
                 <div id="page-content-container">
                     <Routes>
                         <Route 
-                            element={<DashLanding />} 
                             path="/dashboard" 
+                            element={<DashLanding />} 
                             />
                         <Route 
-                            element={<Restaurants />} 
                             path="/restaurants" 
+                            element={<Restaurants />} 
                             />
                         <Route 
                             path="/meal-plans" 
                             element={<MealPlans />} 
                             />
                         <Route 
-                            path="/menu-items" 
-                            element={<MenuItems />} 
+                            path="/menus" 
+                            element={<MenusPage />} 
                             />
                     </Routes>
                 </div>

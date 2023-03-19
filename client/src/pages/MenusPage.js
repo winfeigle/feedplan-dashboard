@@ -2,11 +2,11 @@ import React from "react";
 
 import { Button } from "react-bootstrap";
 
-export default function MenuItems(){
+export default function MenusPage(){
     return(
         <div className="page">
             <div className="dashboard-heading">
-                <h2 variant="feedplan-dark-mist">Menu Items</h2>
+                <h2 variant="feedplan-dark-mist">Menus</h2>
                 <Button
                     id="add-button"
                     variant="outline-feedplan-dark"
