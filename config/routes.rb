@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   get "/meal-plans", to: "meal_plans#index"
 
+  # GETTING/ASSIGNING MEAL PLANS TO RESTAURANTS
   get "/meal-plans/assignments", to: "restaurants_meal_plan#index"
+
+  get "/meal-plans/:meal_plan_id", to: "restaurants_meal_plan#show"
+
 
 
   # Routing logic: fallback requests for React Router.

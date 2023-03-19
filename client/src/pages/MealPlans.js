@@ -5,15 +5,15 @@ import MealPlanCard from "../components/MealPlanCard";
 
 export default function MealPlans(){
 
-    const { loadRestaurantMealPlans, mealPlans } = useContext(MealPlansContext);
+    const { loadMealPlans, mealPlans } = useContext(MealPlansContext);
 
     useEffect(() => {
-        loadRestaurantMealPlans(1)
+        loadMealPlans()
     }, [])
 
-    const renderMealPlanCards = mealPlans.map((plan) => {
+    const renderMealPlanCards = mealPlans.map((mealplan) => {
         return(
-            <MealPlanCard key={plan.id} mealplan={plan}/>
+            <MealPlanCard key={mealplan.id} mealplan={mealplan}/>
         );
     })
     

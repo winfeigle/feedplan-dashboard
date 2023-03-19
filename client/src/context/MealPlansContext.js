@@ -4,8 +4,9 @@ const MealPlansContext = createContext(null);
 
 const MealPlansProvider = ({ children }) => {
     const [ mealPlans, setMealPlans ] = useState([]);
+    const [ assignedRestaurants, setAssignedRestaurants ] = useState([]);
 
-    const loadRestaurantMealPlans = (restaurant_id) => {
+    const loadMealPlans = () => {
         fetch(`/meal-plans`)
             .then((res) => {
                 if(res.ok){
@@ -17,13 +18,21 @@ const MealPlansProvider = ({ children }) => {
             })
     }
 
-    const loadMealPlanAssignments = (meal_plan_id) =>{
-        fetch(`/meal-plans/${meal_plan_id}/assignments`)
+    const loadAssignedRestaurants = (meal_plan_id) =>{
+        fetch(`/meal-plan-assignments/${meal_plan_id}`)
+            .then((res) => {
+                if(res.ok){
+                    res.json().then(setAssignedRestaurants)
+                }else{
+                    // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                    console.log("Something went wrong with mealplan assignments fetch...")
+                }
+            })
     }
 
 
     return(
-        <MealPlansContext.Provider value={{ mealPlans, loadRestaurantMealPlans }}>
+        <MealPlansContext.Provider value={{ mealPlans, assignedRestaurants, loadMealPlans, loadAssignedRestaurants }}>
             { children }
         </MealPlansContext.Provider>
     );

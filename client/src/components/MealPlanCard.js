@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Badge } from "react-bootstrap";
+import { MealPlansContext } from "../context/MealPlansContext";
 
 export default function MealPlanCard({ mealplan }){
+    const { loadAssignedRestaurants, assignedRestaurants } = useContext(MealPlansContext);
 
-    const assignedRestaurants = [];
+    // useEffect(() => {
+    //     loadAssignedRestaurants(mealplan.id);
+    // }, [])
 
-    // const renderMealPlanAssignments = mealplanAssignments.map((assignment) => {
-    //     assignment.meal_plan_id === mealplan.id && assignedRestaurants.push(assignment.name)
-    // })
+    console.log("Console Log:", assignedRestaurants);
+
 
     return(
-        <div id={mealplan.visible ? "assigned" : "unassigned"}
+        <div id={assignedRestaurants ? "assigned" : "unassigned"}
             className="meal-plan-card"
             >
             <Badge 
-                bg={mealplan.visible ? "success" : "secondary"}>{mealplan.visible ? "assigned" : "unassigned"}
+                bg={assignedRestaurants ? "success" : "secondary"}>
+                    {assignedRestaurants ? "assigned" : "unassigned"}
             </Badge>
             <div className="horizontal-line-break"></div>
                 <p><b>Name: </b>{mealplan.name}</p>
@@ -24,7 +28,7 @@ export default function MealPlanCard({ mealplan }){
             <b>Restaurants</b>
 
                 {/* MEALPLAN ASSIGNMENTS RENDERED BELOW */}
-                {/* <span>{ renderMealPlanAssignments }</span> */}
+                <span>{  }</span>
         </div>
     );
 }
