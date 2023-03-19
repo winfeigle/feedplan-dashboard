@@ -6,7 +6,7 @@ export default function RestaurantMenu(){
     return(
         <div className="page">
             <div className="dashboard-heading">
-                <h3 variant="feedplan-dark-mist">"Restaurant Name"</h3>
+                <h3 variant="feedplan-dark-mist">[Restaurant Name]</h3>
                 <Button
                     id="add-button"
                     variant="outline-feedplan-dark"

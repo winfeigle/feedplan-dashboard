@@ -1,3 +1,5 @@
+require 'faker'
+
 puts "Seeding in progress..."
 
 # Admin.create!(
