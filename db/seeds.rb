@@ -62,6 +62,24 @@ puts "Seeding in progress..."
 #     live: false
 #     )
 
+# MenuItem.create!(
+#         name: "Miso Bowl",
+#         description: "Blackened chicken, miso root vegetables (x2), shredded cabbage, basil, roasted almonds, shredded kale, warm wild rice, miso sesame ginger dressing",
+#         image_url: "https://images.ctfassets.net/eum7w7yri3zr/5KYwmj7r8RXXwDmue8oqJa/71316ce89838c2cebab5c4ecc51a0f4e/S1-Menu-MISO_BOWL__sunchoke_mix_.jpg?w=600&q=75",
+#         preparation_time: 15,
+#         visible: true,
+#         restaurant_id: Restaurant.find_by(name: "Cosmic Food Hall").id
+#     )
+
+# MenuItem.create!(
+#         name: "Winter Power Bowl",
+#         description: "BBQ squash + caramelized onions, avocado, shredded cabbage, black lentils, cilantro, sunflower seeds, warm quinoa, baby spinach, extra virgin olive oil, balsamic vinegar",
+#         image_url: "https://images.ctfassets.net/eum7w7yri3zr/1tbkq4IZywTzL8rnub7CM2/d141accbdc822f8f17b9ce25755d6ed5/S1-Menu-WINTER_POWER_BOWL.jpg?w=600&q=75",
+#         preparation_time: 12,
+#         visible: true,
+#         restaurant_id: Restaurant.find_by(name: "Cosmic Food Hall").id
+#     )
+
 
 
 
