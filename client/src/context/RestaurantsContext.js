@@ -17,6 +17,10 @@ const RestaurantsProvider = ({ children }) => {
             })
     }
 
+    const loadMenuItems = (restaurant_id) => {
+
+    }
+
     const createRestaurant = (restaurantData) =>{
         fetch("/restaurants", {
             method: "POST",

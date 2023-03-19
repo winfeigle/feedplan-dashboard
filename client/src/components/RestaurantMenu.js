@@ -2,7 +2,9 @@ import React from "react";
 
 import { Button } from "react-bootstrap";
 
-export default function RestaurantMenu(){
+export default function RestaurantMenu({ restaurant }){
+console.log(restaurant)
+
     return(
         <div className="page">
             <div className="dashboard-heading">
