@@ -5,11 +5,11 @@ import { MealPlansContext } from "../context/MealPlansContext";
 export default function MealPlanCard({ mealplan }){
     const { loadAssignedRestaurants, assignedRestaurants } = useContext(MealPlansContext);
 
-    // useEffect(() => {
-    //     loadAssignedRestaurants(mealplan.id);
-    // }, [])
+    useEffect(() => {
+        loadAssignedRestaurants(mealplan.id);
+    }, [])
 
-    console.log("Console Log:", assignedRestaurants);
+    // console.log("Console Log:", assignedRestaurants);
 
 
     return(

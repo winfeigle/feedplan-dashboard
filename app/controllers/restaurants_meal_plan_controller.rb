@@ -12,15 +12,15 @@ class RestaurantsMealPlanController < ApplicationController
         serializer: MealPlanAssignmentsSerializer
     end
 
-    # def create
-    #     assigned_meal_plan = RestaurantsMealPlan.create!(assignment_params)
-    #     render json: assigned_meal_plan, status: :created
-    # end
+    def create
+        assigned_meal_plan = RestaurantsMealPlan.create!(assignment_params)
+        render json: assigned_meal_plan, status: :created
+    end
 
     private
 
-    # def assignment_params
-    #     params.permit(:restaurant_id, :meal_plan_id)
-    # end
+    def assignment_params
+        params.permit(:restaurant_id, :meal_plan_id)
+    end
 
 end

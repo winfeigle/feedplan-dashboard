@@ -19,7 +19,7 @@ const MealPlansProvider = ({ children }) => {
     }
 
     const loadAssignedRestaurants = (meal_plan_id) =>{
-        fetch(`/meal-plan-assignments/${meal_plan_id}`)
+        fetch(`/meal-plans/${meal_plan_id}`)
             .then((res) => {
                 if(res.ok){
                     res.json().then(setAssignedRestaurants)
