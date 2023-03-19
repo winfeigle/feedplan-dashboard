@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :admins, only: [ :index ]
   resources :restaurants, only: [ :index, :show, :create ]
-  resources :meal_plans, only: [ :index, :show ]
   resources :menu_items, only: [ :index ]
 
 
@@ -17,12 +16,7 @@ Rails.application.routes.draw do
 
   get "/meal-plans", to: "meal_plans#index"
 
-  # GETTING/ASSIGNING MEAL PLANS TO RESTAURANTS
-  get "/meal-plans/assignments", to: "restaurants_meal_plan#index"
-
-  # get "/meal-plans/:meal_plan_id", to: "restaurants_meal_plan#show"
-
-  post "/meal-plans/new-assignment", to: "restaurants_meal_plan#create"
+  get "/meal-plans/:meal_plan_id/restaurants", to: "meal_plans#show"
 
 
 

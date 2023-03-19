@@ -1,22 +1,30 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Badge } from "react-bootstrap";
-import { MealPlansContext } from "../context/MealPlansContext";
 
 export default function MealPlanCard({ mealplan }){
-    const { loadAssignedRestaurants, assignedRestaurants } = useContext(MealPlansContext);
+    const [ assignedRestaurants, setAssignedRestaurants ] = useState([]);
 
-    // useEffect(() => {
-    //     loadAssignedRestaurants(mealplan.id);
-    // }, [])
+    const checkAssignedRestaurants = (assignedRestaurants.length >= 1 ? true : false);
+
+    useEffect(() => {
+        fetch(`/meal-plans/${mealplan.id}/restaurants`)
+            .then((res) => {
+                if(res.ok){
+                    res.json().then(setAssignedRestaurants)
+                }else{
+                    console.log("something went wrong with assigned restaurants fetch")
+                }
+            })
+    }, [])
 
 
     return(
-        <div id={assignedRestaurants ? "assigned" : "unassigned"}
+        <div id={checkAssignedRestaurants ? "assigned" : "unassigned"}
             className="meal-plan-card"
             >
             <Badge 
-                bg={assignedRestaurants ? "success" : "secondary"}>
-                    {assignedRestaurants ? "assigned" : "unassigned"}
+                bg={checkAssignedRestaurants ? "success" : "secondary"}>
+                    {checkAssignedRestaurants ? "assigned" : "unassigned"}
             </Badge>
             <div className="horizontal-line-break"></div>
                 <p><b>Name: </b>{mealplan.name}</p>
