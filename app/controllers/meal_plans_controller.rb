@@ -6,7 +6,7 @@ class MealPlansController < ApplicationController
     end
 
     def show
-        restaurants = RestaurantsMealPlan.where("meal_plan_id = ?", params[:meal_plan_id])
+        restaurants = MealPlan.find_by(id: params[:id]).restaurants.all
 
         render json: restaurants, status: :ok
     end

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get "/meal-plans", to: "meal_plans#index"
 
-  get "/meal-plans/:meal_plan_id/restaurants", to: "meal_plans#show"
+  get "/meal-plans/:id/restaurants", to: "meal_plans#show"
 
 
 
