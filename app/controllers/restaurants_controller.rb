@@ -22,10 +22,19 @@ class RestaurantsController < ApplicationController
         render json: items, status: :ok 
     end
 
+    def create_menu_item
+        menu_item = Restaurant.find_by(id: params[:id]).menu_items.create!(menu_item_params)
+        render json: menu_item, status: :created
+    end
+
     private
 
     def restaurant_params
         params.permit(:name, :description, :image_url, :icon_url, :address)
+    end
+
+    def menu_item_params
+        params.permit(:name, :description, :image_url, :preparation_time, :visible)
     end
 
 end

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post "/meal-plans/create", to: "meal_plans#create"
 
   get "/restaurants/:id/menu", to: "restaurants#menu"
+  post "/restaurants/:id/new-menu-item", to: "restaurants#create_menu_item"
 
 
 
