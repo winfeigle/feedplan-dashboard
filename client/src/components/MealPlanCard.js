@@ -31,9 +31,21 @@ export default function MealPlanCard({ mealplan }){
                 <p><b>Quantity: </b>{mealplan.quantity}</p>
                 <p><b>Price: </b>{`$${mealplan.total_price}`}</p>
             <div className="horizontal-line-break"></div>
-            <b>Restaurants</b>
-
-                {/* MEALPLAN ASSIGNMENTS RENDERED BELOW */}
+            <div className="assigned-restaurant-container">
+                <b>Restaurants</b>
+                <div        className="assigned-restaurant-images">
+                    { assignedRestaurants.map((restaurant) =>{
+                        return(
+                                <img 
+                                    key={restaurant.id}
+                                    className="assigned-restaurant-icon"
+                                    src={restaurant.icon_url}
+                                    alt="assigned restaurant"
+                                />
+                        )
+                    })}
+                </div>
+            </div>
                 <span>{  }</span>
         </div>
     );
