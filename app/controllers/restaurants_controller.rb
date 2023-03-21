@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-    skip_before_action :authorize, only: [ :create ]
+    skip_before_action :authorize, only: [ :delete_menu_item ]
 
     def index
         restaurants = Restaurant.all
@@ -25,6 +25,12 @@ class RestaurantsController < ApplicationController
     def create_menu_item
         menu_item = Restaurant.find_by(id: params[:id]).menu_items.create!(menu_item_params)
         render json: menu_item, status: :created
+    end
+
+    def delete_menu_item
+        menu_item = MenuItem.find_by(id: params[:id])
+        menu_item.destroy
+        head :no_content
     end
 
     private

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get "/restaurants/:id/menu", to: "restaurants#menu"
   post "/restaurants/:id/new-menu-item", to: "restaurants#create_menu_item"
 
+  delete "/restaurants/delete-menu-item/:id", to: "restaurants#delete_menu_item"
+
 
 
   # Routing logic: fallback requests for React Router.

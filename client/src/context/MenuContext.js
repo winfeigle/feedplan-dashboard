@@ -17,8 +17,18 @@ const MenuContextProvider = ({ children }) => {
             })
     }
 
+    const deleteMenuItem = (menu_item_id) =>{
+        fetch(`/restaurants/delete-menu-item/${menu_item_id}`, {
+            method: "DELETE",
+        })
+    }
+
+    const createMenuItem = () => {
+
+    }
+
     return(
-        <MenuContext.Provider value={{ menu, loadMenu }}>
+        <MenuContext.Provider value={{ menu, loadMenu, deleteMenuItem, createMenuItem }}>
             { children }
         </MenuContext.Provider>
     );

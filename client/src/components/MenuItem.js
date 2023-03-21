@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { MenuContext } from "../context/MenuContext";
 
 export default function MenuItem({ menu_item }){
+    const { deleteMenuItem, loadMenu } = useContext(MenuContext);
+
+    const handleDelete = () => {
+        deleteMenuItem(menu_item.id);
+    }
 
     return(
         <Card 
@@ -17,6 +23,7 @@ export default function MenuItem({ menu_item }){
                 <Card.Text>{menu_item.description.slice(0, 50) + '...'}</Card.Text>
                 <Button variant="outline-feedplan-purple">Go somewhere</Button>
             </Card.Body>
+            <Button onClick={handleDelete}>✕</Button>
         </Card>
     );
 }
