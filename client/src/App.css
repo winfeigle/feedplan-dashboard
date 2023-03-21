@@ -191,6 +191,12 @@ h4.nav-headers{
   flex-direction: column;
 }
 
+.meal-plan-table{
+  background-color: rgba(255, 255, 255, 0.524);
+  padding: 1rem;
+  border-radius: 10px 10px 10px;
+}
+
 .restaurant-card{
   display: flex;
     align-items: center;
