@@ -35,9 +35,13 @@ const MealPlansProvider = ({ children }) => {
             })
     }
 
+    const addRestaurantToMealplan = (restaurant_id) =>{
+        console.log(restaurant_id);
+    }
+
 
     return(
-        <MealPlansContext.Provider value={{ mealPlans, loadMealPlans, createMealPlan }}>
+        <MealPlansContext.Provider value={{ mealPlans, loadMealPlans, createMealPlan, addRestaurantToMealplan }}>
             { children }
         </MealPlansContext.Provider>
     );

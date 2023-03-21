@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Badge } from "react-bootstrap";
 
+import AssignRestaurants from "./AssignRestaurants"
+
 export default function MealPlanCard({ mealplan }){
     const [ assignedRestaurants, setAssignedRestaurants ] = useState([]);
 
@@ -33,7 +35,7 @@ export default function MealPlanCard({ mealplan }){
             <div className="horizontal-line-break"></div>
             <div className="assigned-restaurant-container">
                 <b>Restaurants</b>
-                <div        className="assigned-restaurant-images">
+                <div className="assigned-restaurant-images">
                     { assignedRestaurants.map((restaurant) =>{
                         return(
                                 <img 
@@ -44,6 +46,9 @@ export default function MealPlanCard({ mealplan }){
                                 />
                         )
                     })}
+                    <AssignRestaurants 
+                        meal_plan_id={mealplan.id}
+                        />
                 </div>
             </div>
         </div>

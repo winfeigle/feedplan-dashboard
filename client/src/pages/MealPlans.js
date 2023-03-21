@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import { MealPlansContext } from "../context/MealPlansContext";
 import MealPlanCard from "../components/MealPlanCard";
 import CreateMealPlanModal from "../components/CreateMealPlanModal";
