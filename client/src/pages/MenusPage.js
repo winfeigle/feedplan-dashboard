@@ -1,7 +1,10 @@
 import React, { useContext, useEffect } from "react";
+
 import { RestaurantsContext } from "../context/RestaurantsContext";
+import { MenuContextProvider } from "../context/MenuContext";
 
 import RestaurantMenu from "../components/RestaurantMenu";
+
 
 export default function MenusPage(){
     const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
@@ -12,7 +15,10 @@ export default function MenusPage(){
 
     const renderRestaurants = restaurants.map((restaurant) => {
         return(
-            <RestaurantMenu key={restaurant.id} restaurant={restaurant}/>
+            <MenuContextProvider key={restaurant.id} >
+                <RestaurantMenu
+                    restaurant={restaurant}/>
+            </MenuContextProvider>
         );
     })
 

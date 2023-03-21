@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import {  MenuContext } from "../context/MenuContext";
+import MenuItem from "./MenuItem";
 
 import { Button } from "react-bootstrap";
 
 export default function RestaurantMenu({ restaurant }){
+    const { loadMenu, menu } = useContext(MenuContext);
+
+    useEffect(() => {
+        loadMenu(restaurant.id)
+    }, [])
+
+    console.log(menu)
+
+    const renderMenu = menu.map((menu_item) => {
+        return(
+            <MenuItem 
+                key={menu_item.id} 
+                menu_item={menu_item}
+                />
+        );
+    })
 
 
     return(
@@ -29,7 +47,7 @@ export default function RestaurantMenu({ restaurant }){
                 </Button>
             </div>
             <div className="page-container">
-                [Render Restaurant's Menu Items here]
+                    {renderMenu}
             </div>
         </div>
     );
