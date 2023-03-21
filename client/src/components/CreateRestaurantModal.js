@@ -19,8 +19,7 @@ const CreateRestaurantModal = (props) => {
         })
     }
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
+    const handleFormSubmit = () => {
         createRestaurant(restaurantData);
         setRestaurantData({});
     }
@@ -86,7 +85,7 @@ const CreateRestaurantModal = (props) => {
                                 >
                                 <Form.Label>Feature Image URL</Form.Label>
                                 <Form.Control 
-                                    type="text"
+                                    type="url"
                                     name="image_url"
                                     placeholder="paste link here" 
                                     />
@@ -107,7 +106,7 @@ const CreateRestaurantModal = (props) => {
                                 >
                                 <Form.Label>Logo URL</Form.Label>
                                 <Form.Control 
-                                    type="text" 
+                                    type="url" 
                                     name="icon_url"
                                     placeholder="paste link here"
                                     />
@@ -122,13 +121,12 @@ const CreateRestaurantModal = (props) => {
                         </Col>
                     </Row>
                     <br/>
-                    <Button variant="feedplan-purple" type="submit">
-                        Submit
-                    </Button>
-                    <Button variant="outline-feedplan-dark" onClick={props.onHide} className="mx-1">Cancel</Button>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
+                <Button variant="feedplan-purple" type="submit">
+                        Submit
+                    </Button>
                 <Button variant="outline-feedplan-dark" onClick={props.onHide}>Cancel</Button>
             </Modal.Footer>
     </Modal>

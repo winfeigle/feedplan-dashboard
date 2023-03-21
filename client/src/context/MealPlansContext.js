@@ -17,9 +17,27 @@ const MealPlansProvider = ({ children }) => {
             })
     }
 
+    const createMealPlan = (mealPlanData) => {
+        fetch('/meal-plans/create', {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(mealPlanData)
+        })
+            .then((res) => {
+                if(res.ok){
+                    res.then(setMealPlans)
+                }else{
+                    // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                    console.log("Something went wrong with creating the meal plan...")
+                }
+            })
+    }
+
 
     return(
-        <MealPlansContext.Provider value={{ mealPlans, loadMealPlans }}>
+        <MealPlansContext.Provider value={{ mealPlans, loadMealPlans, createMealPlan }}>
             { children }
         </MealPlansContext.Provider>
     );

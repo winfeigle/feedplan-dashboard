@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
+import InputGroup from "react-bootstrap/InputGroup";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { MealPlansContext } from "../context/MealPlansContext";
 
 export default function CreateMealPlanModal(props){
     const [ mealPlanData, setMealPlanData ] = useState([]);
+    const { createMealPlan } = useContext(MealPlansContext);
 
-    const handleFormChange = () => {
-
+    const handleFormChange = (e) => {
+        setMealPlanData({
+            ...mealPlanData,
+            [e.target.name]: e.target.value
+        });
     }
 
     const handleFormSubmit = () => {
-
+        createMealPlan(mealPlanData);
     }
 
     return(
@@ -56,20 +62,25 @@ export default function CreateMealPlanModal(props){
                                 type="number" 
                                 name="quantity"
                                 />
+                            <Form.Text className="text-muted">
+                            Meal plans expire after 30 days
+                            </Form.Text>
                         </Form.Group>
                         </Col>
                     </Row>
                     <Row>
                         <Form.Group 
-                            className="mb-3" 
-                            controlId="formMealPlanQuantity"
+                            className="mb-3"
                             onChange={handleFormChange}
                             >
                             <Form.Label>Total Price</Form.Label>
-                            <Form.Control 
-                                type="currency" 
+                            <InputGroup className="mb-2">
+                                <InputGroup.Text>$</InputGroup.Text>
+                                <Form.Control id="inlineFormInputGroup" placeholder="0.00" 
                                 name="total_price"
+                                type="number" 
                                 />
+                            </InputGroup>
                         </Form.Group>
                     </Row>
                 <br/>
@@ -79,13 +90,9 @@ export default function CreateMealPlanModal(props){
                 </span>
                 <Button variant="feedplan-purple" type="submit">
                         Submit
-                </Button>
-                <Button variant="outline-feedplan-dark" onClick={props.onHide} className="mx-1">Cancel</Button>
+                    </Button>
                 </Form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="outline-feedplan-dark" onClick={props.onHide}>Cancel</Button>
-            </Modal.Footer>
     </Modal>
     );
 }

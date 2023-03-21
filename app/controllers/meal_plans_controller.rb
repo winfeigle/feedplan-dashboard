@@ -12,6 +12,13 @@ class MealPlansController < ApplicationController
     end
 
     def create
-        byebug
+        new_meal_plan = @current_user.meal_plans.create!(meal_plan_params)
+        render json: new_meal_plan, status: :created
+    end
+
+    private
+
+    def meal_plan_params
+        params.permit(:name, :quantity, :total_price)
     end
 end
