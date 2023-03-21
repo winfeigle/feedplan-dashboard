@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "/meal-plans/:id/restaurants", to: "meal_plans#show"
   post "/meal-plans/create", to: "meal_plans#create"
 
+  get "/restaurants/:id/menu", to: "restaurants#menu"
+
 
 
   # Routing logic: fallback requests for React Router.

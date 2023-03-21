@@ -34,7 +34,7 @@ export default function MealPlans(){
                 </Button>
             </div>
             <div className="meal-plan-table">
-                <Table >
+                <Table>
                         <thead>
                             <tr>
                                 <th>Status</th>

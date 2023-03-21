@@ -1,6 +1,4 @@
 class RestaurantsController < ApplicationController
-    validates :name, presence: true
-    
     skip_before_action :authorize, only: [ :create ]
 
     def index
@@ -17,6 +15,11 @@ class RestaurantsController < ApplicationController
         new_restaurant = @current_user.restaurants.create!(restaurant_params)
 
         render json: new_restaurant, status: :created
+    end
+
+    def menu
+        items = Restaurant.find_by(id: params[:id]).menu_items
+        render json: items, status: :ok 
     end
 
     private
