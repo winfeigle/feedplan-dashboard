@@ -1,11 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { MealPlansContext } from "../context/MealPlansContext";
 import MealPlanCard from "../components/MealPlanCard";
+import CreateMealPlanModal from "../components/CreateMealPlanModal";
 
 export default function MealPlans(){
-
     const { loadMealPlans, mealPlans } = useContext(MealPlansContext);
+    const [modalShow, setModalShow] = useState(false);
 
     useEffect(() => {
         loadMealPlans()
@@ -25,6 +26,7 @@ export default function MealPlans(){
                 <Button
                     id="add-button"
                     variant="outline-feedplan-dark"
+                    onClick={() => setModalShow(true)}
                     >
                     create new
                 </Button>
@@ -32,6 +34,12 @@ export default function MealPlans(){
             </div>
             <div className="page-container">
                 { renderMealPlanCards }
+            </div>
+            <div>
+                <CreateMealPlanModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                />
             </div>
         </div>
     );

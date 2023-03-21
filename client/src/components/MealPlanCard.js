@@ -46,7 +46,6 @@ export default function MealPlanCard({ mealplan }){
                     })}
                 </div>
             </div>
-                <span>{  }</span>
         </div>
     );
 }

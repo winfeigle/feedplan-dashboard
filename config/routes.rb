@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :admins, only: [ :index ]
   resources :restaurants, only: [ :index, :show, :create ]
   resources :menu_items, only: [ :index ]
+  
 
 
 
@@ -14,9 +15,10 @@ Rails.application.routes.draw do
 
   get "/admin/:admin_id/restaurants", to: "admins#admin_restaurants"
 
-  get "/meal-plans", to: "meal_plans#index"
 
+  get "/meal-plans", to: "meal_plans#index"
   get "/meal-plans/:id/restaurants", to: "meal_plans#show"
+  post "/meal-plans/create", to: "meal_plans#create"
 
 
 
