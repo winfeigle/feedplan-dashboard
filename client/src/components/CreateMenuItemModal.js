@@ -9,20 +9,17 @@ import Row from 'react-bootstrap/Row';
 
 const CreateMenuItemModal = (props) => {
     const [ menuItem, setMenuItem ] = useState({});
-    const [ isVisible, setIsVisible ] = useState(false);
 
     const { createMenuItem } = useContext(MenuContext);
 
     const handleFormChange = (e) =>{
         setMenuItem({
             ...menuItem,
-            [e.target.name]: e.target.value,
             restaurant_id: props.restaurant.id,
-            visible: isVisible
+            visible: false,
+            [e.target.name]: e.target.value
         })
     }
-
-    console.log(isVisible)
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
@@ -42,6 +39,7 @@ const CreateMenuItemModal = (props) => {
                     <img 
                         id="restaurant-menu-icon"
                         src={props.restaurant.icon_url}
+                        alt="restaurant icon"
                         />
                     {props.restaurant.name}
                 </Modal.Title>
@@ -112,21 +110,15 @@ const CreateMenuItemModal = (props) => {
                         </Col>
                     </Row>
                     <br/>
-                    <Form.Check 
-                        onChange={() => {setIsVisible(!isVisible)}}
-                        type="switch"
-                        id="custom-switch"
-                        label={ isVisible ? "Visible" : "Hidden" }
-                        />
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button 
+                    <Button 
                     variant="feedplan-purple" 
                     type="submit"
                     >
                         Submit
                     </Button>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
                 <Button variant="outline-feedplan-dark" onClick={props.onHide}>Cancel</Button>
             </Modal.Footer>
     </Modal>
