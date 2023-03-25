@@ -334,7 +334,7 @@ span.restaurant-address {
   text-align: center;
 }
 
-.restaurant-image-preview, .restaurant-icon-preview{
+.restaurant-image-preview, .restaurant-icon-preview, .restaurant-menu-item-preview{
   object-fit: cover;
   margin-top: 1rem;
   border: dashed #bdbdbd 2px;
@@ -345,9 +345,12 @@ span.restaurant-address {
   aspect-ratio: 16/9;
 }
 
-.restaurant-icon-preview {
+.restaurant-icon-preview, .restaurant-menu-item-preview {
   width: 25%;
   height: 25%;
   aspect-ratio: 1/1;
+}
+
+.restaurant-icon-preview{
   border-radius: 50%;
 }

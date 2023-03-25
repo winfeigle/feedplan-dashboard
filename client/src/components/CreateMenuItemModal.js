@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 
 const CreateMenuItemModal = (props) => {
     const [ menuItem, setMenuItem ] = useState({});
+    const [ isVisible, setIsVisible ] = useState(false);
 
     const { createMenuItem } = useContext(MenuContext);
 
@@ -16,9 +17,12 @@ const CreateMenuItemModal = (props) => {
         setMenuItem({
             ...menuItem,
             [e.target.name]: e.target.value,
-            restaurant_id: props.restaurant.id
+            restaurant_id: props.restaurant.id,
+            visible: isVisible
         })
     }
+
+    console.log(isVisible)
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
@@ -91,7 +95,7 @@ const CreateMenuItemModal = (props) => {
                                 controlId="formRestauarantImage"
                                 onChange={handleFormChange}
                                 >
-                                <Form.Label>Feature Image URL</Form.Label>
+                                <Form.Label>Menu Item Image URL</Form.Label>
                                 <Form.Control 
                                     type="url"
                                     name="image_url"
@@ -99,8 +103,8 @@ const CreateMenuItemModal = (props) => {
                                     />
                                 <div id="restaurant-preview-container">
                                     <img 
-                                        className={menuItem.image_url ? "restaurant-image-preview" : "image-placeholder"} 
-                                        alt="Restaurant feature preview"
+                                        className={menuItem.image_url ? "restaurant-menu-item-preview" : "image-placeholder"} 
+                                        alt="Menu item feature preview"
                                         src={menuItem.image_url}
                                         />
                                 </div>
@@ -108,6 +112,12 @@ const CreateMenuItemModal = (props) => {
                         </Col>
                     </Row>
                     <br/>
+                    <Form.Check 
+                        onChange={() => {setIsVisible(!isVisible)}}
+                        type="switch"
+                        id="custom-switch"
+                        label={ isVisible ? "Visible" : "Hidden" }
+                        />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
