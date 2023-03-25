@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const CreateRestaurantModal = (props) => {
+const CreateMenuItemModal = (props) => {
     const [ restaurantData, setRestaurantData ] = useState({});
 
     const { createRestaurant } = useContext(RestaurantsContext)
@@ -137,4 +137,4 @@ const CreateRestaurantModal = (props) => {
     );
 }
 
-export default CreateRestaurantModal;
+export default CreateMenuItemModal;

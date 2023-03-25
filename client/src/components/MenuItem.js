@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { MenuContext } from "../context/MenuContext";
 
 export default function MenuItem({ menu_item }){
-    const { deleteMenuItem, loadMenu } = useContext(MenuContext);
+    const { deleteMenuItem } = useContext(MenuContext);
 
     const handleDelete = () => {
         deleteMenuItem(menu_item.id);
@@ -21,9 +21,9 @@ export default function MenuItem({ menu_item }){
             <Card.Body>
                 <Card.Title>{menu_item.name}</Card.Title>
                 <Card.Text>{menu_item.description.slice(0, 50) + '...'}</Card.Text>
-                <Button variant="outline-feedplan-purple">Go somewhere</Button>
+                <Button variant="outline-feedplan-purple">edit</Button>
+                <Button onClick={handleDelete}>delete</Button>
             </Card.Body>
-            <Button onClick={handleDelete}>✕</Button>
         </Card>
     );
 }

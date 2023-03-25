@@ -1,17 +1,17 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {  MenuContext } from "../context/MenuContext";
 import MenuItem from "./MenuItem";
 
 import { Button } from "react-bootstrap";
+import CreateMenuItemModal from "./CreateMenuItemModal";
 
 export default function RestaurantMenu({ restaurant }){
     const { loadMenu, menu } = useContext(MenuContext);
+    const [modalShow, setModalShow] = useState(false);
 
     useEffect(() => {
         loadMenu(restaurant.id)
     }, [])
-
-    console.log(menu)
 
     const renderMenu = menu.map((menu_item) => {
         return(
@@ -41,13 +41,21 @@ export default function RestaurantMenu({ restaurant }){
                 </div>
                 <Button
                     id="add-button"
-                    variant="outline-feedplan-dark"
+                    variant="outline-feedplan-dark" 
+                    onClick={() => setModalShow(true)}
                     >
                     Add menu item
                 </Button>
             </div>
             <div className="page-container">
                     {renderMenu}
+            </div>
+            <div>
+                <CreateMenuItemModal
+                    restaurant={restaurant}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    />
             </div>
         </div>
     );
