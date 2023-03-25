@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { RestaurantsContext } from "../context/RestaurantsContext";
+import { MenuContext } from "../context/MenuContext";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -8,21 +8,22 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const CreateMenuItemModal = (props) => {
-    const [ restaurantData, setRestaurantData ] = useState({});
+    const [ menuItem, setMenuItem ] = useState({});
 
-    const { createRestaurant } = useContext(RestaurantsContext)
+    const { createMenuItem } = useContext(MenuContext);
 
     const handleFormChange = (e) =>{
-        setRestaurantData({
-            ...restaurantData,
-            [e.target.name]: e.target.value
+        setMenuItem({
+            ...menuItem,
+            [e.target.name]: e.target.value,
+            restaurant_id: props.restaurant.id
         })
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        createRestaurant(restaurantData);
-        setRestaurantData({});
+        createMenuItem(menuItem);
+        setMenuItem({});
     }
 
     return(
@@ -34,7 +35,11 @@ const CreateMenuItemModal = (props) => {
             >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Add a restaurant
+                    <img 
+                        id="restaurant-menu-icon"
+                        src={props.restaurant.icon_url}
+                        />
+                    {props.restaurant.name}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -43,17 +48,32 @@ const CreateMenuItemModal = (props) => {
                         <Col>
                             <Form.Group 
                                 className="mb-3" 
-                                controlId="formRestauarantName"
+                                controlId="formMealName"
                                 onChange={handleFormChange}
                                 >
-                                <Form.Label>Restaurant Name</Form.Label>
+                                <Form.Label>Name</Form.Label>
                                 <Form.Control 
                                     type="text" 
                                     name="name"
                                     />
                             </Form.Group>
+                            </Col>
+                            <Col>
                             <Form.Group 
-                                className="mb-3" controlId="formRestauarantDescription"
+                                className="mb-3" 
+                                controlId="formRestauarantAddress"
+                                onChange={handleFormChange}
+                                >
+                                <Form.Label>Preparation Time</Form.Label>
+                                <Form.Control 
+                                    type="number"
+                                    name="preparation_time"
+                                    placeholder="minutes" 
+                                    />
+                            </Form.Group>
+                            </Col>
+                            <Form.Group 
+                                className="mb-3" controlId="formMealDescription"
                                 onChange={handleFormChange}
                                 >
                                 <Form.Label>Description</Form.Label>
@@ -62,19 +82,6 @@ const CreateMenuItemModal = (props) => {
                                     name="description"
                                     />
                             </Form.Group>
-                            <Form.Group 
-                                className="mb-3" 
-                                controlId="formRestauarantAddress"
-                                onChange={handleFormChange}
-                                >
-                                <Form.Label>Address</Form.Label>
-                                <Form.Control 
-                                    type="text"
-                                    name="address"
-                                    placeholder="Street, City, State ZIP" 
-                                    />
-                            </Form.Group>
-                        </Col>
                     </Row>
                 <br/>
                     <Row>
@@ -92,32 +99,11 @@ const CreateMenuItemModal = (props) => {
                                     />
                                 <div id="restaurant-preview-container">
                                     <img 
-                                        className={restaurantData.image_url ? "restaurant-image-preview" : "image-placeholder"} 
+                                        className={menuItem.image_url ? "restaurant-image-preview" : "image-placeholder"} 
                                         alt="Restaurant feature preview"
-                                        src={restaurantData.image_url}
+                                        src={menuItem.image_url}
                                         />
                                 </div>
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Form.Group 
-                                className="mb-3" 
-                                controlId="formRestauarantLogo"
-                                onChange={handleFormChange}
-                                >
-                                <Form.Label>Logo URL</Form.Label>
-                                <Form.Control 
-                                    type="url" 
-                                    name="icon_url"
-                                    placeholder="paste link here"
-                                    />
-                                    <div id="restaurant-preview-container">
-                                        <img 
-                                            className={restaurantData.icon_url ? "restaurant-icon-preview" : "icon-placeholder"} 
-                                            alt="logo preview"
-                                            src={restaurantData.icon_url}
-                                            />
-                                    </div>
                             </Form.Group>
                         </Col>
                     </Row>

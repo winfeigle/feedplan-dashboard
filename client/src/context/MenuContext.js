@@ -23,8 +23,8 @@ const MenuContextProvider = ({ children }) => {
         })
     }
 
-    const createMenuItem = () => {
-
+    const createMenuItem = (menuItem) => {
+        console.log(menuItem)
     }
 
     return(
