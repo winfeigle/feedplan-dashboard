@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-    skip_before_action :authorize, only: [ :delete_menu_item ]
+    skip_before_action :authorize, only: [ :update ]
 
     def index
         restaurants = Restaurant.all
@@ -15,6 +15,10 @@ class RestaurantsController < ApplicationController
         new_restaurant = @current_user.restaurants.create!(restaurant_params)
 
         render json: new_restaurant, status: :created
+    end
+
+    def update
+        byebug
     end
 
     def menu

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/meal-plans/:id/restaurants", to: "meal_plans#show"
   post "/meal-plans/create", to: "meal_plans#create"
 
+  patch "/restaurants/:id/update", to: "restaurants#update"
   get "/restaurants/:id/menu", to: "restaurants#menu"
   post "/restaurants/:id/new-menu-item", to: "restaurants#create_menu_item"
 
