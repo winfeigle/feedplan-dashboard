@@ -24,7 +24,22 @@ const MenuContextProvider = ({ children }) => {
     }
 
     const createMenuItem = (menuItem) => {
-        console.log(menuItem)
+        fetch(`/restaurants/${menuItem.restaurant_id}/new-menu-item`, {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(menuItem)
+        })
+            .then((res) => {
+                if(res.ok){
+                    res.json().then((data) => {console.log(data)})
+                }else{
+                    // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                    console.log("Something went wrong with adding a menu item...")
+                }
+            })
+            
     }
 
     return(
