@@ -18,7 +18,9 @@ class RestaurantsController < ApplicationController
     end
 
     def update
-        byebug
+        updated_restaurant = Restaurant.find_by(id: params[:id]).update!(restaurant_params)
+
+        render json: updated_restaurant, status: :accepted
     end
 
     def menu

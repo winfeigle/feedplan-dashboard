@@ -27,8 +27,21 @@ const RestaurantsProvider = ({ children }) => {
         })
     }
 
-    const updateRestaurant = (restaurant) =>{
-        console.log(restaurant)
+    const updateRestaurant = (restaurantData) =>{
+        fetch(`/restaurants/${restaurantData.id}/update`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(restaurantData)
+        }).then((res) => {
+            if(res.ok){
+                res.json().then((data) => console.log(data))
+            }else{
+                // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                console.log("Something went wrong with restaurants patch...")
+            }
+        })
     }
 
     return (
