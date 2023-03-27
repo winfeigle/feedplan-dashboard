@@ -11,6 +11,8 @@ const EditRestaurant = (props) => {
     const [ restaurantData, setRestaurantData ] = useState(props.restaurant);
     const { updateRestaurant } = useContext(RestaurantsContext)
 
+    console.log(restaurantData)
+
     const handleFormChange = (e) =>{
         setRestaurantData({
             ...restaurantData,
@@ -130,6 +132,22 @@ const EditRestaurant = (props) => {
                             </Form.Group>
                         </Col>
                     </Row>
+                    <br/>
+                    <Form.Select
+                        onChange={handleFormChange}
+                        name="live"
+                        value={restaurantData.live}
+                        aria-label="Live status selection"
+                        >
+                        <option 
+                            value="true"
+                            >Live
+                            </option>
+                        <option 
+                            value="false"
+                            > Draft
+                            </option>
+                        </Form.Select>
                     <br/>
                 <div id="modal-buttons">
                     <Button 

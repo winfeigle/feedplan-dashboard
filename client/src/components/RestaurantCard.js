@@ -25,7 +25,7 @@ const RestaurantCard = ({ restaurant }) => {
                     </Button>
                 </div>
                 <div id="status-badge">
-                    <Badge 
+                    <Badge
                         bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
                     </Badge>
                 </div>
