@@ -110,17 +110,18 @@ const CreateMenuItemModal = (props) => {
                         </Col>
                     </Row>
                     <br/>
-                    <Button 
-                    variant="feedplan-purple" 
-                    type="submit"
-                    >
-                        Submit
-                    </Button>
+                    <div id="modal-buttons">
+                        <Button 
+                            variant="feedplan-purple" 
+                            type="submit"
+                            onClick={props.onHide}
+                            >
+                                Submit
+                            </Button>
+                        <Button variant="outline-feedplan-dark" onClick={props.onHide}>Cancel</Button>
+                    </div>
                 </Form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="outline-feedplan-dark" onClick={props.onHide}>Cancel</Button>
-            </Modal.Footer>
     </Modal>
     );
 }

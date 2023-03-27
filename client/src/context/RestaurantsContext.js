@@ -27,8 +27,8 @@ const RestaurantsProvider = ({ children }) => {
         })
     }
 
-    const updateRestaurant = () =>{
-        
+    const updateRestaurant = (restaurant) =>{
+        console.log(restaurant)
     }
 
     return (

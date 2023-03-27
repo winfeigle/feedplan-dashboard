@@ -354,3 +354,12 @@ span.restaurant-address {
 .restaurant-icon-preview{
   border-radius: 50%;
 }
+
+#modal-buttons{
+  display: flex;
+  justify-content: flex-start;
+}
+
+#modal-buttons > button:nth-of-type(1) {
+  margin-right: 1rem;
+}
