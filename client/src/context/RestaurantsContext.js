@@ -27,8 +27,12 @@ const RestaurantsProvider = ({ children }) => {
         })
     }
 
+    const updateRestaurant = () =>{
+        
+    }
+
     return (
-        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, createRestaurant }}>
+        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, createRestaurant, updateRestaurant }}>
             { children }
         </RestaurantsContext.Provider>
     );

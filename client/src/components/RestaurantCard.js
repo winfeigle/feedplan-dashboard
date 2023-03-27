@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge, Button } from 'react-bootstrap';
 import FormatAddress from "../helpers/FormatAddress";
+import EditRestaurant from "./EditRestaurant";
 
 
 const RestaurantCard = ({ restaurant }) => {
+    const [modalShow, setModalShow] = useState(false);
+
+    const handleRestaurantEdit = () => {
+        setModalShow(true)
+    }
 
     return(
         <div 
@@ -12,7 +18,10 @@ const RestaurantCard = ({ restaurant }) => {
             key={restaurant.id}
             >
                 <div id="edit-button">
-                    <Button variant="dark">edit
+                    <Button 
+                        onClick={handleRestaurantEdit}
+                        variant="dark"
+                        >edit
                     </Button>
                 </div>
                 <div id="status-badge">
@@ -46,6 +55,11 @@ const RestaurantCard = ({ restaurant }) => {
                 <div className="restaurant-button-group">
                     <Button variant="outline-feedplan-dark">Menu Items</Button>
                 </div>
+                <EditRestaurant
+                    restaurant={restaurant}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    />
         </div>
     );
 }

@@ -15,9 +15,10 @@ export default function Restaurants(){
         loadRestaurants(user.id)
     }, [])
 
+
     const renderRestaurantCards = restaurants.map((restaurant) => {
         return(
-            <RestaurantCard 
+            <RestaurantCard
                 key={restaurant.id} 
                 restaurant={restaurant}
                 />
