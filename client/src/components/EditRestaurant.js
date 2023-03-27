@@ -33,7 +33,15 @@ const EditRestaurant = (props) => {
             >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Add a restaurant
+                    <b 
+                        style={{ 
+                            color: "#665BF7",
+                            backgroundColor: "#665BF720",
+                            padding: ".5rem 1rem",
+                            borderRadius: "5px",
+                            }}
+                        >{restaurantData.name}
+                        </b>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
