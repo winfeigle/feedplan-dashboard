@@ -11,8 +11,6 @@ const EditRestaurant = (props) => {
     const [ restaurantData, setRestaurantData ] = useState(props.restaurant);
     const { updateRestaurant } = useContext(RestaurantsContext)
 
-    console.log(restaurantData)
-
     const handleFormChange = (e) =>{
         setRestaurantData({
             ...restaurantData,
