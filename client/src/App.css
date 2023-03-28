@@ -226,7 +226,11 @@ h4.nav-headers{
 .assigned-restaurant-images{
   display: flex;
   flex-direction: row;
-  margin-top: 0.5rem;
+}
+
+td{
+  display: flexbox;
+  vertical-align: middle;
 }
 
 img.assigned-restaurant-icon, #assign-restaurant-button{
