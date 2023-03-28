@@ -45,7 +45,7 @@ export default function Restaurants(){
             <div>
                 <CreateRestaurantModal
                     show={modalShow}
-                    onHide={() => setModalShow(false)}
+                    onHide={() => {setModalShow(false)}}
                     />
             </div>
         </div>
