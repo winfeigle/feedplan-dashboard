@@ -44,7 +44,7 @@ export default function MealPlanCard({ mealplan }){
                         )
                     })}
                     <AssignRestaurants 
-                        meal_plan_id={mealplan.id}
+                        mealplan={mealplan}
                         />
                 </div>
             </td>

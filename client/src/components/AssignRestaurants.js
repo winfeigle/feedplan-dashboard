@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-export default function AssignRestaurants({ meal_plan_id }){
+export default function AssignRestaurants({ mealplan }){
     const [show, setShow] = useState(false);
     const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
 
@@ -50,7 +50,7 @@ export default function AssignRestaurants({ meal_plan_id }){
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>Add Meal Plan to Restaurants</Modal.Title>
+                <Modal.Title>{`Assign ${mealplan.name} meal plan`}</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
