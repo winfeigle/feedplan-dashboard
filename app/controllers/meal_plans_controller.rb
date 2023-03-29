@@ -16,7 +16,9 @@ class MealPlansController < ApplicationController
     end
 
     def assign
-        byebug
+        new_assignment = RestaurantsMealPlan.create!(assignment_params)
+
+        render json: new_assignment, status: :created
     end
 
     def remove_restaurant
@@ -27,5 +29,9 @@ class MealPlansController < ApplicationController
 
     def meal_plan_params
         params.permit(:name, :quantity, :total_price)
+    end
+
+    def assignment_params
+        params.permit(:restaurant_id, :meal_plan_id)
     end
 end
