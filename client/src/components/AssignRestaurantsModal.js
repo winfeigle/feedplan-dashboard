@@ -42,7 +42,7 @@ export default function AssignRestaurantsModal({ mealplan }){
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                 <Modal.Title>{`Assign ${mealplan.name} meal plan`}</Modal.Title>
                 </Modal.Header>
 

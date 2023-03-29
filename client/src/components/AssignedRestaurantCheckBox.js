@@ -39,7 +39,7 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
                     width={120}
                     size="sm"
                     onlabel='Assigned'
-                    onstyle="primary"
+                    onstyle="success"
                     offlabel='Unassigned'
                     offstyle='secondary'
                     onChange={handleToggle}

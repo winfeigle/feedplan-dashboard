@@ -44,10 +44,7 @@ const MealPlansProvider = ({ children }) => {
             })
         })
             .then((res) => {
-                if(res.ok){
-                    res.json().then((data) => console.log(data))
-                }else{
-                    // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
+                if(!res.ok){
                     console.log("Something went wrong with meal plan assignment...")
                 }
             })
