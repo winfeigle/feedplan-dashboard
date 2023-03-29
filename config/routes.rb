@@ -17,10 +17,11 @@ Rails.application.routes.draw do
 
 
   get "/meal-plans", to: "meal_plans#index"
-  get "/meal-plans/:id/restaurants", to: "meal_plans#restaurants"
+  delete "/meal-plans", to: "meal_plans#destroy"
   post "/meal-plans/create", to: "meal_plans#create"
 
   # add/remove restaurants from meal plans
+   get "/meal-plans/:id/restaurants", to: "meal_plans#restaurants"
   post "/meal-plans/assign", to: "meal_plans#assign_restaurant"
   delete "/meal-plans/remove", to: "meal_plans#remove_restaurant"
 

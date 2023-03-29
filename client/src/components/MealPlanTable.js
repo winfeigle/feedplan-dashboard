@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Badge, Table } from "react-bootstrap";
+import { Badge, Button } from "react-bootstrap";
 
 import AssignRestaurantsModal from "./AssignRestaurantsModal"
 
@@ -22,6 +22,7 @@ export default function MealPlanCard({ mealplan }){
 
     return(
         <tr>
+            
             <td><Badge 
                     bg={checkAssignedRestaurants ? "success" : "secondary"}
                     >
@@ -32,6 +33,7 @@ export default function MealPlanCard({ mealplan }){
             <td>{mealplan.quantity}</td>
             <td>{mealplan.total_price}</td>
             <td>
+                
                 <div className="assigned-restaurant-images">
                     { assignedRestaurants.map((restaurant) =>{
                         return(

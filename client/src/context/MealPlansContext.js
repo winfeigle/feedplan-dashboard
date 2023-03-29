@@ -32,6 +32,10 @@ const MealPlansProvider = ({ children }) => {
             })
     }
 
+    const deleteMealPlan = (meal_plan_id) => {
+        console.log(meal_plan_id)
+    }
+
     const addRestaurantToMealplan = (restaurant_id, mealplan_id) =>{
         fetch(`/meal-plans/assign`, {
             method: "POST",
@@ -69,6 +73,7 @@ const MealPlansProvider = ({ children }) => {
             mealPlans, 
             loadMealPlans, 
             createMealPlan,
+            deleteMealPlan,
             addRestaurantToMealplan, 
             removeRestaurantMealplan 
             }}>

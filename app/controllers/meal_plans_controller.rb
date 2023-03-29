@@ -1,5 +1,4 @@
 class MealPlansController < ApplicationController
-    #  skip_before_action :authorize, only: [ :index ]
 
     def index
         render json: @current_user.meal_plans, status: :ok
@@ -8,6 +7,10 @@ class MealPlansController < ApplicationController
     def create
         new_meal_plan = @current_user.meal_plans.create!(meal_plan_params)
         render json: new_meal_plan, status: :created
+    end
+
+    def destroy
+        # byebug
     end
 
     def restaurants

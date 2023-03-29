@@ -4,6 +4,7 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
 import AssignedRestaurantCheckBox from "./AssignedRestaurantCheckBox";
 
 import Button from "react-bootstrap/Button";
+import Alert from 'react-bootstrap/Alert';
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
@@ -52,11 +53,14 @@ export default function AssignRestaurantsModal({ mealplan }){
                             {renderRestaurants}
                         </div>
                         <div className="horizontal-line-break"></div>
-                        <Button 
-                            type="submit"
-                            variant="feedplan-purple">
-                            Done
-                        </Button>
+                        <div id="modal-buttons">
+                            <Button 
+                                type="submit"
+                                variant="feedplan-purple">
+                                Done
+                            </Button>
+                            <Button variant="outline-danger">delete</Button>
+                        </div>
                     </Form>
                 </Modal.Body>
             </Modal>
