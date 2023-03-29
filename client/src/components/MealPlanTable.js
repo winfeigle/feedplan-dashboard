@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Badge, Table } from "react-bootstrap";
 
-import AssignRestaurants from "./AssignRestaurants"
+import AssignRestaurantsModal from "./AssignRestaurantsModal"
 
 export default function MealPlanCard({ mealplan }){
     const [ assignedRestaurants, setAssignedRestaurants ] = useState([]);
@@ -43,7 +43,7 @@ export default function MealPlanCard({ mealplan }){
                                 />
                         )
                     })}
-                    <AssignRestaurants 
+                    <AssignRestaurantsModal 
                         mealplan={mealplan}
                         />
                 </div>

@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-export default function AssignRestaurants({ mealplan }){
+export default function AssignRestaurantsModal({ mealplan }){
     // hide/show modal
     const [show, setShow] = useState(false);
 
@@ -46,13 +46,15 @@ export default function AssignRestaurants({ mealplan }){
                 </Modal.Header>
 
                 <Modal.Body>
-                    <Form>
+                    <Form >
                         <div key="checkbox" className="mb-3">
                             {renderRestaurants}
                         </div>
                         <div className="horizontal-line-break"></div>
-                        <Button variant="feedplan-purple" onClick={handleClose}>
-                            Save Changes
+                        <Button 
+                            type="submit"
+                            variant="feedplan-purple">
+                            Done
                         </Button>
                     </Form>
                 </Modal.Body>
