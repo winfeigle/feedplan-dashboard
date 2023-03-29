@@ -5,21 +5,20 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 
 const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
+
+    const { addRestaurantToMealplan, removeRestaurantMealplan } = useContext(MealPlansContext);
+    
     // Determine whether to have checked, .some() returns true or false
     const [ checked, setChecked ] = useState(
         mealplan.restaurants.some(assignedRestaurant => assignedRestaurant.restaurant_id === restaurant.id)
     );
 
 
-    const { addRestaurantToMealplan, removeRestaurantMealplan } = useContext(MealPlansContext);
-
-
-
     const handleToggle = () => {
         if(checked){
-            addRestaurantToMealplan(restaurant.id, mealplan.id)
-        }else{
             removeRestaurantMealplan(restaurant.id, mealplan.id)
+        }else{
+            addRestaurantToMealplan(restaurant.id, mealplan.id)
         }
         setChecked(!checked);
     }
@@ -36,6 +35,7 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
             </div>
             <BootstrapSwitchButton
                 checked={checked}
+                value={checked}
                 width={120}
                 size="sm"
                 onlabel='Assigned'
