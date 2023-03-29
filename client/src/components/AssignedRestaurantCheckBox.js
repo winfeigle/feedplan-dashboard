@@ -4,6 +4,7 @@ import { MealPlansContext } from "../context/MealPlansContext";
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 
+
 const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
 
     const { addRestaurantToMealplan, removeRestaurantMealplan } = useContext(MealPlansContext);
@@ -35,13 +36,13 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
             </div>
             <div>
                 <BootstrapSwitchButton
+                    id="toggle-button"
                     checked={checked}
-                    width={120}
-                    size="sm"
                     onlabel='Assigned'
+                    width={125}
                     onstyle="success"
                     offlabel='Unassigned'
-                    offstyle='secondary'
+                    offstyle="secondary"
                     onChange={handleToggle}
                     />
             </div>
