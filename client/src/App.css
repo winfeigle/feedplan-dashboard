@@ -374,10 +374,6 @@ span.restaurant-address {
   justify-content: space-between;
 }
 
-span#toggle-button{
-  width: 200px;
-}
-
 .restaurant-info-checkbox{
   display: flex;
   flex-direction: column;
