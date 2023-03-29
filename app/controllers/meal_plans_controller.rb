@@ -16,6 +16,14 @@ class MealPlansController < ApplicationController
         render json: new_meal_plan, status: :created
     end
 
+    def assign
+        byebug
+    end
+
+    def remove_restaurant
+        byebug
+    end
+
     private
 
     def meal_plan_params

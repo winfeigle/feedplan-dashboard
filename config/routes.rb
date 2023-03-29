@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/meal-plans", to: "meal_plans#index"
   get "/meal-plans/:id/restaurants", to: "meal_plans#show"
   post "/meal-plans/create", to: "meal_plans#create"
+  post "/meal-plans/assign", to: "meal_plans#assign"
 
   patch "/restaurants/:id/update", to: "restaurants#update"
   get "/restaurants/:id/menu", to: "restaurants#menu"
