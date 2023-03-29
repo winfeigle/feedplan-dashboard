@@ -36,8 +36,6 @@ const MealPlansProvider = ({ children }) => {
     }
 
     const addRestaurantToMealplan = (restaurant_id, mealplan_id) =>{
-        // console.log(`Add: ${restaurant_id} ${mealplan_id}`);
-
         fetch(`/meal-plans/assign`, {
             method: "POST",
             headers: {
@@ -59,7 +57,16 @@ const MealPlansProvider = ({ children }) => {
     }
 
     const removeRestaurantMealplan = (restaurant_id, mealplan_id) =>{
-        console.log(`Remove: ${restaurant_id} ${mealplan_id}`);
+        fetch(`/meal-plans/remove`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                restaurant_id: restaurant_id,
+                meal_plan_id: mealplan_id
+            })
+        })
     }
 
 

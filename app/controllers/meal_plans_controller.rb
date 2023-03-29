@@ -15,14 +15,17 @@ class MealPlansController < ApplicationController
         render json: assigned_restaurants, status: :ok
     end
 
-    def assign
+    def assign_restaurant
         new_assignment = RestaurantsMealPlan.create!(assignment_params)
 
         render json: new_assignment, status: :created
     end
 
     def remove_restaurant
-        byebug
+        assignment = RestaurantsMealPlan.find_by(assignment_params)
+
+        assignment.destroy
+        head :no_content
     end
 
     private
