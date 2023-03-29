@@ -17,14 +17,13 @@ Rails.application.routes.draw do
 
 
   get "/meal-plans", to: "meal_plans#index"
-  get "/meal-plans/:id/restaurants", to: "meal_plans#show"
+  get "/meal-plans/:id/restaurants", to: "meal_plans#restaurants"
   post "/meal-plans/create", to: "meal_plans#create"
   post "/meal-plans/assign", to: "meal_plans#assign"
 
   patch "/restaurants/:id/update", to: "restaurants#update"
   get "/restaurants/:id/menu", to: "restaurants#menu"
   post "/restaurants/:id/new-menu-item", to: "restaurants#create_menu_item"
-
   delete "/restaurants/delete-menu-item/:id", to: "restaurants#delete_menu_item"
 
 

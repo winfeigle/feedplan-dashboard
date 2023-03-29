@@ -49,10 +49,10 @@ const MealPlansProvider = ({ children }) => {
         })
             .then((res) => {
                 if(res.ok){
-                    res.then(setMealPlans)
+                    //  ???
                 }else{
                     // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
-                    console.log("Something went wrong with creating the meal plan...")
+                    console.log("Something went wrong with meal plan assignment...")
                 }
             })
     }
@@ -63,7 +63,13 @@ const MealPlansProvider = ({ children }) => {
 
 
     return(
-        <MealPlansContext.Provider value={{ mealPlans, loadMealPlans, createMealPlan, addRestaurantToMealplan, removeRestaurantMealplan }}>
+        <MealPlansContext.Provider value={{ 
+            mealPlans, 
+            loadMealPlans, 
+            createMealPlan,
+            addRestaurantToMealplan, 
+            removeRestaurantMealplan 
+            }}>
             { children }
         </MealPlansContext.Provider>
     );

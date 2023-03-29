@@ -23,6 +23,7 @@ export default function AssignRestaurants({ mealplan }){
     const renderRestaurants = restaurants.map((restaurant) =>{
         return(
             <AssignedRestaurantCheckBox 
+                key={restaurant.id}
                 mealplan={mealplan}
                 restaurant={restaurant}
                 />

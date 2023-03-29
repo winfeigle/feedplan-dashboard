@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MealPlansContext } from "../context/MealPlansContext";
 
 import Form from "react-bootstrap/Form";
@@ -20,7 +20,6 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) =>{
         <>
             <Form.Check
                 onChange={handleAssignRestaurant}
-                key={restaurant.id}
                 label={
                     <div className="restaurant-select-container">
                         <span>
