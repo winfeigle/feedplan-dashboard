@@ -1,12 +1,9 @@
-$theme-colors: (
-    "feedplan-dark": #251D2E,
-    "feedplan-dark-mist": #251d2e80,
-    "feedplan-purple": #665BF7,
-    "feedplan-teal": #00D9CB,
-    "feedplan-off-white": #f5f5f7,
-    "success": #6ad98f,
-    "danger": #dc4040,
-    "light": white,
-);
+// Override bootstrap theme colors
+$feedplan-dark: #251D2E;
+$feedplan-dark-mist: #251d2e80;
+$feedplan-purple: #665BF7;
+$feedplan-teal: #00D9CB;
+$success: #6ad98f;
+$danger: #dc4040;
 
 @import '~bootstrap/scss/bootstrap.scss';

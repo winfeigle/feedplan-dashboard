@@ -24,8 +24,8 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
     }
 
     return(
-        <div>
-             <div className="restaurant-select-container">
+        <div id="restaurant-checkbox-container">
+             <div className="restaurant-info-checkbox">
                 <span>
                     {restaurant.name}
                 </span>
@@ -33,17 +33,18 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
                     {restaurant.address}
                 </span>
             </div>
-            <BootstrapSwitchButton
-                checked={checked}
-                value={checked}
-                width={120}
-                size="sm"
-                onlabel='Assigned'
-                onstyle="success"
-                offlabel='Unassigned'
-                offstyle='secondary'
-                onChange={handleToggle}
-                />
+            <div>
+                <BootstrapSwitchButton
+                    checked={checked}
+                    width={120}
+                    size="sm"
+                    onlabel='Assigned'
+                    onstyle="primary"
+                    offlabel='Unassigned'
+                    offstyle='secondary'
+                    onChange={handleToggle}
+                    />
+            </div>
         </div>
     )
 }

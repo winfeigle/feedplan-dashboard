@@ -4,7 +4,6 @@ const MealPlansContext = createContext(null);
 
 const MealPlansProvider = ({ children }) => {
     const [ mealPlans, setMealPlans ] = useState([]);
-
     const loadMealPlans = () => {
         fetch(`/meal-plans`)
             .then((res) => {
@@ -26,9 +25,7 @@ const MealPlansProvider = ({ children }) => {
             body: JSON.stringify(mealPlanData)
         })
             .then((res) => {
-                if(res.ok){
-                    res.then(setMealPlans)
-                }else{
+                if(!res.ok){
                     // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
                     console.log("Something went wrong with creating the meal plan...")
                 }

@@ -14,6 +14,7 @@ export default function AssignRestaurantsModal({ mealplan }){
     const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
 
     const handleClose = () => setShow(false);
+
     const handleShow = () => setShow(true);
 
     useEffect(() => {

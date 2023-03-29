@@ -369,12 +369,18 @@ span.restaurant-address {
   margin-right: 1rem;
 }
 
-.restaurant-select-container{
+#restaurant-checkbox-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.restaurant-info-checkbox{
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 }
 
-.restaurant-select-container .restaurant-address{
+.restaurant-info-checkbox .restaurant-address{
   color: rgba(0, 0, 0, 0.5);
 }
