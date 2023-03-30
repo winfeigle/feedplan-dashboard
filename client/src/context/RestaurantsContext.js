@@ -34,8 +34,14 @@ const RestaurantsProvider = ({ children }) => {
         })
     }
 
+    const deleteRestaurant = (restaurant_id) => {
+        fetch(`/restaurants/${restaurant_id}`, {
+            method: "DELETE"
+        }).then(loadRestaurants)
+    }
+
     return (
-        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, updateRestaurant }}>
+        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, updateRestaurant, deleteRestaurant }}>
             { children }
         </RestaurantsContext.Provider>
     );

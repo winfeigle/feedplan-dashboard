@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Badge, Button } from 'react-bootstrap';
 import FormatAddress from "../helpers/FormatAddress";
 import EditRestaurant from "./EditRestaurant";
+import { RestaurantsContext } from "../context/RestaurantsContext";
 
 
 const RestaurantCard = ({ restaurant }) => {
     const [modalShow, setModalShow] = useState(false);
+    const { deleteRestaurant } = useContext(RestaurantsContext);
 
     const handleRestaurantEdit = () => {
         setModalShow(true)
+    }
+
+    const handleRestaurantDelete = () =>{
+        deleteRestaurant(restaurant.id)
     }
 
     return(
@@ -53,7 +59,10 @@ const RestaurantCard = ({ restaurant }) => {
                     {/* Meal plans elements to go here */}
                 </div>
                 <div className="restaurant-button-group">
-                    <Button variant="outline-feedplan-dark">Delete</Button>
+                    <Button
+                        variant="outline-feedplan-dark"
+                        onClick={handleRestaurantDelete}
+                        >Delete</Button>
                 </div>
                 <EditRestaurant
                     restaurant={restaurant}

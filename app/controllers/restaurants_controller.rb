@@ -16,6 +16,12 @@ class RestaurantsController < ApplicationController
         render json: new_restaurant, status: :created
     end
 
+    def destroy
+        restaurant = Restaurant.find_by(id: params[:id])
+        restaurant.destroy
+        head :no_content
+    end
+
     def update
         updated_restaurant = Restaurant.find_by(id: params[:id]).update!(restaurant_params)
 
