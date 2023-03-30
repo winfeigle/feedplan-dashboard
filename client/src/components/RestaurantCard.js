@@ -15,7 +15,7 @@ const RestaurantCard = ({ restaurant }) => {
         <div 
             id={restaurant.live ? "live" : "draft"}
             className="restaurant-card"
-            key={restaurant.id}
+            key={`${restaurant.id}-card`}
             >
                 <div id="edit-button">
                     <Button 
@@ -53,7 +53,7 @@ const RestaurantCard = ({ restaurant }) => {
                     {/* Meal plans elements to go here */}
                 </div>
                 <div className="restaurant-button-group">
-                    <Button variant="outline-feedplan-dark">Menu Items</Button>
+                    <Button variant="outline-feedplan-dark">Delete</Button>
                 </div>
                 <EditRestaurant
                     restaurant={restaurant}

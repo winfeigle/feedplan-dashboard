@@ -369,6 +369,21 @@ span.restaurant-address {
   border-radius: 50%;
 }
 
+#errors-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.error-message{
+  margin-right: 10px;
+  padding: 0.5rem 1rem;
+  border: dotted #dc4040 2px;
+  border-radius: 5px;
+  color: #dc4040;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
 #modal-buttons{
   display: flex;
   justify-content: flex-start;

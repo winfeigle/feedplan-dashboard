@@ -9,10 +9,9 @@ import Row from 'react-bootstrap/Row';
 
 const CreateRestaurantModal = (props) => {
     const [ restaurantData, setRestaurantData ] = useState({});
+    const [ errors, setErrors ] = useState([]);
 
-    const { createRestaurant, errors } = useContext(RestaurantsContext)
-
-    console.log(errors)
+    const { createRestaurant } = useContext(RestaurantsContext)
 
     const handleFormChange = (e) =>{
         setRestaurantData({
@@ -23,8 +22,20 @@ const CreateRestaurantModal = (props) => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        createRestaurant(restaurantData);
-        setRestaurantData({});
+        setErrors([])
+        fetch("/restaurants", {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json'},
+            body: JSON.stringify({ ...restaurantData, live: false})
+            }).then((r) => {
+                if(r.ok){
+                    createRestaurant(restaurantData);
+                    setRestaurantData({});
+                    props.onHide()
+                } else{
+                    r.json().then((err) => setErrors(err.errors));
+                }
+        })
     }
 
     return(
@@ -39,6 +50,17 @@ const CreateRestaurantModal = (props) => {
                 Add a restaurant
                 </Modal.Title>
             </Modal.Header>
+            <div id="errors-container">
+                { 
+                    errors.map((err) => (
+                        <div 
+                            className="error-message" 
+                            key={err}>
+                                {err}
+                        </div>
+                ))
+                }
+            </div>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
                     <Row>
@@ -128,7 +150,6 @@ const CreateRestaurantModal = (props) => {
                         <Button 
                             variant="feedplan-purple" 
                             type="submit"
-                            onClick={props.onHide}
                             >
                                 Submit
                             </Button>

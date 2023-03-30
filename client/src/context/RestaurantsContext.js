@@ -4,7 +4,6 @@ const RestaurantsContext = createContext(null);
 
 const RestaurantsProvider = ({ children }) => {
     const [ restaurants, setRestaurants ] = useState([]);
-    const [ errors, setErrors ] = useState([]);
 
     const loadRestaurants = (user_id) => {
         fetch(`/admin/${user_id}/restaurants`)
@@ -18,21 +17,8 @@ const RestaurantsProvider = ({ children }) => {
             })
     }
 
-    const createRestaurant = (restaurantData) =>{
-        // setErrors([]);
-        fetch("/restaurants", {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(restaurantData)
-        }).then((res) => {
-            if(res.ok){
-                res.json().then(setRestaurants)
-            }else{
-                res.json().then((err) => console.log(err))
-            }
-        })
+    const createRestaurant = (newRestaurant) =>{
+        setRestaurants((restaurants) => [...restaurants, newRestaurant])
     }
 
     const updateRestaurant = (restaurantData) =>{
@@ -53,7 +39,7 @@ const RestaurantsProvider = ({ children }) => {
     }
 
     return (
-        <RestaurantsContext.Provider value={{ errors, restaurants, loadRestaurants, createRestaurant, updateRestaurant }}>
+        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, createRestaurant, updateRestaurant }}>
             { children }
         </RestaurantsContext.Provider>
     );
