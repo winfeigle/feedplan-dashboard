@@ -40,7 +40,7 @@ const AssignedRestaurantCheckBox = ({ restaurant, mealplan }) => {
                     checked={checked}
                     onlabel='Assigned'
                     width={125}
-                    onstyle="success"
+                    onstyle="feedplan-dark-mist"
                     offlabel='Unassigned'
                     offstyle="secondary"
                     onChange={handleToggle}
