@@ -9,7 +9,7 @@ import CreateRestaurantModal from "../components/CreateRestaurantModal";
 export default function Restaurants(){
     const { user } = useContext(UserContext);
     const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
-    const [modalShow, setModalShow] = useState(false);
+    const [ modalShow, setModalShow ] = useState(false);
 
     useEffect(() => {
         loadRestaurants(user.id)

@@ -17,10 +17,6 @@ const RestaurantsProvider = ({ children }) => {
             })
     }
 
-    const createRestaurant = (newRestaurant) =>{
-        setRestaurants((restaurants) => [...restaurants, newRestaurant])
-    }
-
     const updateRestaurant = (restaurantData) =>{
         fetch(`/restaurants/${restaurantData.id}/update`, {
             method: "PATCH",
@@ -30,7 +26,7 @@ const RestaurantsProvider = ({ children }) => {
             body: JSON.stringify(restaurantData)
         }).then((res) => {
             if(res.ok){
-                res.json().then((data) => console.log(data))
+                loadRestaurants();
             }else{
                 // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
                 console.log("Something went wrong with restaurants patch...")
@@ -39,7 +35,7 @@ const RestaurantsProvider = ({ children }) => {
     }
 
     return (
-        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, createRestaurant, updateRestaurant }}>
+        <RestaurantsContext.Provider value={{ restaurants, loadRestaurants, updateRestaurant }}>
             { children }
         </RestaurantsContext.Provider>
     );

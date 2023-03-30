@@ -11,7 +11,7 @@ const CreateRestaurantModal = (props) => {
     const [ restaurantData, setRestaurantData ] = useState({});
     const [ errors, setErrors ] = useState([]);
 
-    const { createRestaurant } = useContext(RestaurantsContext)
+    const { loadRestaurants } = useContext(RestaurantsContext)
 
     const handleFormChange = (e) =>{
         setRestaurantData({
@@ -29,7 +29,7 @@ const CreateRestaurantModal = (props) => {
             body: JSON.stringify({ ...restaurantData, live: false})
             }).then((r) => {
                 if(r.ok){
-                    createRestaurant(restaurantData);
+                    loadRestaurants();
                     setRestaurantData({});
                     props.onHide()
                 } else{
