@@ -84,11 +84,6 @@ export default function CreateMealPlanModal(props){
                         </Form.Group>
                     </Row>
                 <br/>
-                <span>
-
-                <p>[ Add an assign to restaurant Switch check here ]</p>
-                </span>
-                
                 <div id="modal-buttons">
                     <Button 
                         variant="feedplan-purple" 

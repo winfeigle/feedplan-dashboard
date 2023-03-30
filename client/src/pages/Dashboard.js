@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Navigation from '../components/Navigation';
 import Account from "../components/Account";
-import DashLanding from "../components/DashLanding";
+import DashLanding from "./DashLanding";
 import Restaurants from './Restaurants';
 import MealPlans from "./MealPlans";
 import MenusPage from "./MenusPage";
