@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
-    skip_before_action :authorize, only: [ :update ]
 
     def index
         restaurants = Restaurant.all
@@ -38,6 +37,7 @@ class RestaurantsController < ApplicationController
         menu_item.destroy
         head :no_content
     end
+
 
 
     private

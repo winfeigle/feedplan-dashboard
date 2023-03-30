@@ -10,7 +10,9 @@ import Row from 'react-bootstrap/Row';
 const CreateRestaurantModal = (props) => {
     const [ restaurantData, setRestaurantData ] = useState({});
 
-    const { createRestaurant } = useContext(RestaurantsContext)
+    const { createRestaurant, errors } = useContext(RestaurantsContext)
+
+    console.log(errors)
 
     const handleFormChange = (e) =>{
         setRestaurantData({
