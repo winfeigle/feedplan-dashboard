@@ -7,12 +7,15 @@ import Button from "react-bootstrap/Button";
 import Alert from 'react-bootstrap/Alert';
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { MealPlansContext } from "../context/MealPlansContext";
 
 export default function AssignRestaurantsModal({ mealplan }){
     // hide/show modal
     const [show, setShow] = useState(false);
 
     const { restaurants, loadRestaurants } = useContext(RestaurantsContext);
+
+    const { deleteMealPlan, error } = useContext(MealPlansContext);
 
     const handleClose = () => setShow(false);
 
@@ -31,6 +34,10 @@ export default function AssignRestaurantsModal({ mealplan }){
                 />
         );
     })
+
+    const handleDelete = () =>{
+        deleteMealPlan(mealplan.id)
+    }
 
     return(
         <div>
@@ -61,6 +68,7 @@ export default function AssignRestaurantsModal({ mealplan }){
                             </Button>
                             <Button 
                                 variant="outline-danger"
+                                onClick={handleDelete}
                                 >delete</Button>
                         </div>
                     </Form>
