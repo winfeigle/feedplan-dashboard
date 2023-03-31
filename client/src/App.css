@@ -277,6 +277,16 @@ h4.nav-headers{
   background-color: white;
 }
 
+.restaurant-stats-container{
+  display: flex;
+}
+
+.restaurant-stat{
+  font-size: 0.9rem;
+  display: flex;
+  margin-right: 0.5rem;
+}
+
 .assigned-restaurant-container{
   display: flex;
   flex-direction: column;
@@ -302,12 +312,14 @@ img.assigned-restaurant-icon {
   border: solid #f5f5f7 3px;
 }
 
+.restaurant-button-group{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 #edit-button{
-  position: absolute;
-  opacity: 50%;
-  bottom: 5px;
-  right: 5px;
-  margin: 12px;
+  margin-right: 12px;
 }
 
 #status-badge{

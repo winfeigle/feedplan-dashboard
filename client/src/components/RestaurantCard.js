@@ -23,13 +23,6 @@ const RestaurantCard = ({ restaurant }) => {
             id={restaurant.live ? "live" : "draft"}
             className="restaurant-card"
             >
-                <div id="edit-button">
-                    <Button 
-                        onClick={handleRestaurantEdit}
-                        variant="dark"
-                        >edit
-                    </Button>
-                </div>
                 <div id="status-badge">
                     <Badge
                         bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
@@ -54,15 +47,26 @@ const RestaurantCard = ({ restaurant }) => {
                     </span>
                     <FormatAddress rawAddress={restaurant.address}/>
                 </div>
-            <div className="horizontal-line-break"></div>
-                <div className="restaurant-mealplans">
-                    {/* Meal plans elements to go here */}
+                <div className="restaurant-stats-container">
+                    <div className="restaurant-stat">
+                        <p><b>{restaurant.menu_items}</b> menu items</p>
+                        </div>
+                    <div className="restaurant-stat">
+                        <p><b>{restaurant.meal_plans}</b> meal plans</p>
+                        </div>
                 </div>
+            <div className="horizontal-line-break"></div>
                 <div className="restaurant-button-group">
                     <Button
+                        id="edit-button" 
+                        onClick={handleRestaurantEdit}
                         variant="outline-feedplan-dark"
+                        >edit</Button>
+                    {!restaurant.live && <Button
+                        id="delete-button"
+                        variant="outline-danger"
                         onClick={handleRestaurantDelete}
-                        >Delete</Button>
+                        >Delete</Button>}
                 </div>
                 <EditRestaurant
                     restaurant={restaurant}
