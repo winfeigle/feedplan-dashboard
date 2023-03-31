@@ -24,7 +24,7 @@ export default function RestaurantMenu({ restaurant }){
 
 
     return(
-        <div className="page">
+        <div className="restaurant-menu-section">
             <div className="dashboard-heading">
                 <div className="card-headings">
                     <img
@@ -37,14 +37,14 @@ export default function RestaurantMenu({ restaurant }){
                             marginRight: "10px"
                             }}
                         />
-                    <h3>{restaurant.name}</h3>
+                    <h2>{restaurant.name}</h2>
                 </div>
                 <Button
                     id="add-button"
                     variant="outline-feedplan-dark" 
                     onClick={() => setModalShow(true)}
                     >
-                    Add menu item
+                    add meal
                 </Button>
             </div>
             <div className="page-container">

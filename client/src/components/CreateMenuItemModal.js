@@ -13,10 +13,10 @@ const CreateMenuItemModal = (props) => {
 
     const handleFormChange = (e) =>{
         setMenuItem({
+            ...menuItem,
             [e.target.name]: e.target.value,
             restaurant_id: props.restaurant.id,
-            visible: false,
-            ...menuItem
+            visible: false
         })
     }
 

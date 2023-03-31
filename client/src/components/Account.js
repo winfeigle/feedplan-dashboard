@@ -7,7 +7,7 @@ export default function Account(){
     const { user } = useContext(UserContext);
 
     return(
-        <div id="static-account-container">
+        <div id="static-account-container" style={{ zIndex: 2}}>
             <Button 
                 variant="feedplan-purple" 
                 size="lg" 
