@@ -32,11 +32,6 @@ export default function AssignRestaurantsModal({ mealplan }){
         );
     })
 
-
-    const warningMessage = () => {
-        // Alert here...
-    }
-
     return(
         <div>
             <Button
@@ -66,7 +61,6 @@ export default function AssignRestaurantsModal({ mealplan }){
                             </Button>
                             <Button 
                                 variant="outline-danger"
-                                onClick={warningMessage}
                                 >delete</Button>
                         </div>
                     </Form>

@@ -13,10 +13,11 @@ function SignupForm(){
     const [ newUser, setNewUser ] = useState({
         username: "",
         email: "",
-        password: ""
+        password: "",
+        password_confirmation: ""
     })
 
-  const { error } = useContext(UserContext);
+  const { error, signUp } = useContext(UserContext);
 
 
     const onFormChange = (e) => {
@@ -26,10 +27,12 @@ function SignupForm(){
     const onFormSubmit = (e) => {
         e.preventDefault()
         // console.log(newUser)
+        signUp(newUser);
         setNewUser({
-            username: "", 
-            email: "", 
-            password: ""
+            username: "",
+            email: "",
+            password: "",
+            password_confirmation: ""
         })
     }
 
@@ -86,13 +89,13 @@ function SignupForm(){
             onChange={(e) => onFormChange(e)}
             className="form-input"
             />
-            <label htmlFor="password-confirmation" className="form-label">
+            <label htmlFor="password_confirmation" className="form-label">
             Password confirmation
             </label>
             <input
-            type="password-confirmation"
+            type="password"
             id="password-confirmation"
-            name="password-confirmation"
+            name="password_confirmation"
             placeholder="••••••••"
             value={newUser.password_confirmation}
             onChange={(e) => onFormChange(e)}

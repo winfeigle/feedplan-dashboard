@@ -19,9 +19,23 @@ const UserProvider = ({ children }) => {
       })
     }
 
+    const signUp = (newUser) => {
+      fetch('/signup', {
+            method: "POST",
+            headers: { "Content-Type":"application/json"},
+            body: JSON.stringify(newUser)
+        }).then((r) => {
+            if (r.ok) {
+              r.json().then((user) => loginUser(user));
+            } else {
+              r.json().then((err) => setError(err.errors));
+            }
+          });
+    }
+
     const loginUser = (loginData) =>{
         const { username, password } = loginData
-        fetch('login', {
+        fetch('/login', {
           method: "POST",
           headers: {
             "Content-Type":"application/json"
@@ -54,7 +68,7 @@ const UserProvider = ({ children }) => {
         }
 
     return (
-        <UserContext.Provider value={{ error, user, setUser, loadUser, loginUser, logoutUser }}>
+        <UserContext.Provider value={{ error, user, setUser, loadUser, loginUser, signUp, logoutUser }}>
             { children }
         </UserContext.Provider>
     );

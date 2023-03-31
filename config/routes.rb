@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :admins, only: [ :index ]
+  resources :admins, only: [ :index, :create ]
   resources :restaurants, only: [ :index, :show, :create, :destroy ]
   resources :menu_items, only: [ :index ]
   
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   get '/me', to: 'admins#show'
-  # post '/signup', to: 'users#create'
+  post '/signup', to: 'admins#create'
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

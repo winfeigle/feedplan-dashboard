@@ -1,15 +1,14 @@
 class AdminsController < ApplicationController
-
-    # FOR TESTING PURPOSES ONLY
-    skip_before_action :authorize, only: [ :create, :admin_meal_plans ]
-    # DELETE WHEN TESTS COMPLETE
+    skip_before_action :authorize, only: [ :create ]
     
     def show   
         render json: @current_user
     end
 
-    def index
-        # current_user = User.find_by(id: session[:admin_id])
+    def create
+        admin = Admin.create!(user_params)
+        session[:admin_id] = admin.id
+        render json: admin, status: :created
     end
 
     def admin_restaurants
@@ -25,7 +24,7 @@ class AdminsController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password_digest)
+        params.permit(:username, :password, :password_confirmation)
     end
     
 end

@@ -8,8 +8,6 @@ import Button from "react-bootstrap/esm/Button";
 
 function LoginForm(){
   const { error, loginUser } = useContext(UserContext);
-
-  console.log(error)
   
   const [ loginData, setLoginData ] = useState({
         username: "",
