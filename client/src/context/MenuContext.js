@@ -20,7 +20,7 @@ const MenuContextProvider = ({ children }) => {
     const deleteMenuItem = (menu_item_id) =>{
         fetch(`/restaurants/delete-menu-item/${menu_item_id}`, {
             method: "DELETE",
-        })
+        }).then(setMenu((menu) => menu.filter((item) => item.id !== menu_item_id)))
     }
 
     const createMenuItem = (menuItem) => {
