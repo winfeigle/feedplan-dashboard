@@ -52,7 +52,7 @@ const UserProvider = ({ children }) => {
             if(r.ok){
                 r.json().then(data => setUser(data.user));
                 loadUser();
-                navigate('/dashboard')
+                navigate('/restaurants')
             } else{
                 r.json().then((err) => setError(`${Object.keys(err)}: ${Object.values(err)}`))
             }

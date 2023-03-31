@@ -41,7 +41,6 @@ function App() {
               >
             </Route>
           </Routes>
-          {/* <SignupForm handleLogin={onLogin}/> */}
         </div> }
     </div>
   );
