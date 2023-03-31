@@ -26,7 +26,10 @@ const UserProvider = ({ children }) => {
             body: JSON.stringify(newUser)
         }).then((r) => {
             if (r.ok) {
-              r.json().then((user) => loginUser(user));
+              r.json().then((user) => {
+                  loginUser(user)
+                  loadUser();
+                });
             } else {
               r.json().then((err) => setError(err.errors));
             }
