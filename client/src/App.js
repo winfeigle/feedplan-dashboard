@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-// import SignupForm from './components/SignupForm';
+import SignupForm from './components/SignupForm';
 import Dashboard from './pages/Dashboard';
 import { UserContext } from './context/UserContext';
 import { RestaurantsProvider } from './context/RestaurantsContext';
@@ -33,6 +33,11 @@ function App() {
             <Route
               element={<LoginForm />}
               path="/"
+              >
+            </Route>
+            <Route
+              element={<SignupForm />}
+              path="/sign-up"
               >
             </Route>
           </Routes>

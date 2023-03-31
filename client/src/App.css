@@ -172,7 +172,7 @@ h4.nav-headers{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  /* height: 50vh; */
 }
 
 .form {
@@ -182,12 +182,25 @@ h4.nav-headers{
   box-shadow: 0px 2px 6px #e0e0e0;
   display: flex;
   flex-direction: column;
+  min-width: 500px;
+  max-width: 600px;
 }
 
 .form h1{
   font-size: 1.4rem;
   margin-top: 2rem;
   margin-bottom: 1.75rem;
+}
+
+.signup, .login p {
+  color: #665BF7;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup, .login h1 {
+  margin-top: 0rem;
+  color: #251D2E;
 }
 
 .form-label {
@@ -222,7 +235,7 @@ h4.nav-headers{
 .login.form-container{
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  margin: 50px;
 }
 
 #login-logo-container {

@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
 
     def index
         restaurants = Restaurant.all
-        render json: restaurants, status: :ok
+        render json: restaurants, serializer: :RestaurantSerializer, status: :ok
     end
 
     def show

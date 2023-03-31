@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import {UserContext} from "../context/UserContext";
+import Footer from "./Footer";
 
 import logo from "../assets/feedplan_combo_logo_dark.png"
 import Button from "react-bootstrap/esm/Button";
@@ -33,6 +34,7 @@ function LoginForm(){
             <img id="login-logo" src={logo} alt="login logo"/>
           </div>
       <form onSubmit={onFormSubmit} className="login form" style={{ width: "35%"}}>
+        <p>Welcome back,</p>
         <h1>Sign in to your account</h1>
         <label htmlFor="username" className="form-label">
           Username
@@ -69,14 +71,15 @@ function LoginForm(){
                 }
             </div>
 
-        <Button variant="feedplan-purple" type="submit" className="form-submit-button" style={{ width: "100%"}}>
+        <Button variant="outline-feedplan-purple" type="submit" className="form-submit-button" style={{ width: "100%"}}>
           Log in
         </Button>
          <div className="signup-link">
-          <a href="#">Don't have an account? Sign up here</a>
+          <a href="/sign-up">Don't have an account? <u>Sign up here</u></a>
         </div>
       </form>
     </div>
+    <Footer />
     </div>
     );
 }
