@@ -23,6 +23,16 @@ const MenuContextProvider = ({ children }) => {
         }).then(setMenu((menu) => menu.filter((item) => item.id !== menu_item_id)))
     }
 
+    const updateMenuItem = (menuItemData) =>{
+        fetch(`/restaurants/update-menu-item/${menuItemData.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(menuItemData)
+        })
+    }
+
     const createMenuItem = (menuItem) => {
         fetch(`/restaurants/${menuItem.restaurant_id}/new-menu-item`, {
             method: "POST",
@@ -43,7 +53,7 @@ const MenuContextProvider = ({ children }) => {
     }
 
     return(
-        <MenuContext.Provider value={{ menu, loadMenu, deleteMenuItem, createMenuItem }}>
+        <MenuContext.Provider value={{ menu, loadMenu, deleteMenuItem, createMenuItem, updateMenuItem }}>
             { children }
         </MenuContext.Provider>
     );

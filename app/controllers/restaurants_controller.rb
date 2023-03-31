@@ -44,6 +44,12 @@ class RestaurantsController < ApplicationController
         head :no_content
     end
 
+    def update_menu_item
+        menu_item = MenuItem.find_by(id: params[:id]).update!(menu_item_params)
+
+        render json: menu_item, status: :ok
+    end
+
 
 
     private

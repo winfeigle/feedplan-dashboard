@@ -1,19 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import EditMenuItem from "./EditMenuItem";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Nav from "react-bootstrap/Nav";
-import { MenuContext } from "../context/MenuContext";
-import { RestaurantsContext } from "../context/RestaurantsContext";
 import CardImg from "react-bootstrap/esm/CardImg";
 
+import { MenuContext } from "../context/MenuContext";
+import { RestaurantsContext } from "../context/RestaurantsContext";
+
 export default function MenuItem({ menu_item }){
+    const [modalShow, setModalShow] = useState(false);
+    
     const { deleteMenuItem } = useContext(MenuContext);
     const { loadRestaurants } = useContext(RestaurantsContext)
 
     const handleDelete = () => {
         deleteMenuItem(menu_item.id);
         loadRestaurants();
+    }
+
+    const handleEdit = () => {
+        setModalShow(true)
     }
 
     return(
@@ -38,11 +45,17 @@ export default function MenuItem({ menu_item }){
         <Card.Body>
             <Button 
                 style={{width: "100%" }} variant="outline-feedplan-dark"
+                onClick={handleEdit}
                 >edit</Button>
-        {/* <Button 
-            onClick={handleDelete} variant="outline-danger"
-            >delete</Button> */}
+        <Button 
+            onClick={handleDelete} variant="outline-danger" style={{marginLeft: "0.75rem"}}
+            >delete</Button>
         </Card.Body>
+        <EditMenuItem
+            menu_item={menu_item}
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            />
       </Card>
     );
 }

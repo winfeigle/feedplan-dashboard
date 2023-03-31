@@ -252,7 +252,7 @@ h4.nav-headers{
   margin: 2rem 3rem;
 }
 
-.page-container{
+.page-container, .menu-container{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;

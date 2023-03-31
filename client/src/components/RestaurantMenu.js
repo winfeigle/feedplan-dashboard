@@ -47,7 +47,7 @@ export default function RestaurantMenu({ restaurant }){
                     add meal
                 </Button>
             </div>
-            <div className="page-container">
+            <div className="menu-container">
                     {renderMenu}
             </div>
             <div>

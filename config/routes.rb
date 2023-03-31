@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   post "/restaurants/:id/new-menu-item", to: "restaurants#create_menu_item"
 
   delete "/restaurants/delete-menu-item/:id", to: "restaurants#delete_menu_item"
+  patch "/restaurants/update-menu-item/:id", to: "restaurants#update_menu_item"
 
 
 
