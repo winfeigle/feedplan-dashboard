@@ -9,8 +9,7 @@ import Row from 'react-bootstrap/Row';
 
 const CreateMenuItemModal = (props) => {
     const [ menuItem, setMenuItem ] = useState({});
-
-    const { createMenuItem } = useContext(MenuContext);
+    const { createMenuItem, loadMenu } = useContext(MenuContext);
 
     const handleFormChange = (e) =>{
         setMenuItem({

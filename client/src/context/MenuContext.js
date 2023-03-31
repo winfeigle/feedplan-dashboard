@@ -33,7 +33,7 @@ const MenuContextProvider = ({ children }) => {
         })
             .then((res) => {
                 if(res.ok){
-                    res.json().then((data) => {console.log(data)})
+                    res.json().then((new_item) => setMenu([...menu, new_item]))
                 }else{
                     // FOR TESTING PURPOSES ONLY, UPDATE FOR PRODUCTION
                     console.log("Something went wrong with adding a menu item...")

@@ -7,7 +7,7 @@ import CreateMenuItemModal from "./CreateMenuItemModal";
 
 export default function RestaurantMenu({ restaurant }){
     const { loadMenu, menu } = useContext(MenuContext);
-    const [modalShow, setModalShow] = useState(false);
+    const [ modalShow, setModalShow ] = useState(false);
 
     useEffect(() => {
         loadMenu(restaurant.id)

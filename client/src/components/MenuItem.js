@@ -3,12 +3,15 @@ import React, { useContext } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { MenuContext } from "../context/MenuContext";
+import { RestaurantsContext } from "../context/RestaurantsContext";
 
 export default function MenuItem({ menu_item }){
     const { deleteMenuItem } = useContext(MenuContext);
+    const { loadRestaurants } = useContext(RestaurantsContext)
 
     const handleDelete = () => {
         deleteMenuItem(menu_item.id);
+        loadRestaurants();
     }
 
     return(
