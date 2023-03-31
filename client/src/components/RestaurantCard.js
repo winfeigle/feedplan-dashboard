@@ -25,7 +25,7 @@ const RestaurantCard = ({ restaurant }) => {
             >
                 <div id="status-badge">
                     <Badge
-                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Live" : "Draft"}
+                        bg={restaurant.live ? "success" : "secondary"}>{restaurant.live ? "Active" : "Draft"}
                     </Badge>
                 </div>
                 <div className="card-headings">
@@ -67,6 +67,11 @@ const RestaurantCard = ({ restaurant }) => {
                         variant="outline-danger"
                         onClick={handleRestaurantDelete}
                         >Delete</Button>}
+                    {restaurant.live && <Button
+                        id="duplication-button"
+                        variant="outline-feedplan-purple"
+                        // onClick={handleRestaurantDuplicate}
+                        >Duplicate</Button>}
                 </div>
                 <EditRestaurant
                     restaurant={restaurant}
