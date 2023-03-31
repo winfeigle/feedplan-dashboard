@@ -12,7 +12,7 @@ class MealPlansController < ApplicationController
     def destroy
         meal_plan = MealPlan.find_by(id: params[:id])
 
-        return render json: { error: "One or more restaurants are still assigned to this meal plan" }, status: :unauthorized unless meal_plan.restaurants.count == 0
+        return render json: { error: "One or more restaurants are still assigned to this meal plan" }, status: :conflict unless meal_plan.restaurants.count == 0
 
         meal_plan.destroy
         head :no_content

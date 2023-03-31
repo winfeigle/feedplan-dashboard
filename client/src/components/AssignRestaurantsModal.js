@@ -59,6 +59,7 @@ export default function AssignRestaurantsModal({ mealplan }){
                         <div key="checkbox" className="mb-3">
                             {renderRestaurants}
                         </div>
+                        { error && <Alert variant="danger"><b>Unable to delete: </b>{error}</Alert> }
                         <div className="horizontal-line-break"></div>
                         <div id="modal-buttons">
                             <Button 

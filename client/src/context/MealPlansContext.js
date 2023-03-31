@@ -42,7 +42,7 @@ const MealPlansProvider = ({ children }) => {
             if(res.ok){
                 setMealPlans((mealPlans) => mealPlans.filter((plan) => (plan.id !== meal_plan_id)))
             }else{
-                res.json().then((err) => console.log(err))
+                res.json().then((err) => setError(err.error))
             }
         })
     }
