@@ -70,6 +70,7 @@ const RestaurantCard = ({ restaurant }) => {
                     {restaurant.live && <Button
                         id="duplication-button"
                         variant="outline-feedplan-purple"
+                        disabled
                         // onClick={handleRestaurantDuplicate}
                         >Duplicate</Button>}
                 </div>
