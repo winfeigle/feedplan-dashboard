@@ -5,7 +5,7 @@ const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
     const [ user, setUser ] = useState(null);
-    const [ error, setError ] = useState("");
+    const [ errors, setErrors ] = useState([]);
     const navigate = useNavigate();
 
     const loadUser = () => {
@@ -31,7 +31,7 @@ const UserProvider = ({ children }) => {
                   loadUser();
                 });
             } else {
-              r.json().then((err) => setError(err.errors));
+              r.json().then((err) => setErrors(err.errors));
             }
           });
     }
@@ -54,7 +54,7 @@ const UserProvider = ({ children }) => {
                 loadUser();
                 navigate('/restaurants')
             } else{
-                r.json().then((err) => setError(`${Object.keys(err)}: ${Object.values(err)}`))
+                r.json().then((err) => setErrors(`${Object.keys(err)}: ${Object.values(err)}`))
             }
         })
     }
@@ -71,7 +71,7 @@ const UserProvider = ({ children }) => {
         }
 
     return (
-        <UserContext.Provider value={{ error, user, setUser, loadUser, loginUser, signUp, logoutUser }}>
+        <UserContext.Provider value={{ errors, user, setUser, loadUser, loginUser, signUp, logoutUser }}>
             { children }
         </UserContext.Provider>
     );
