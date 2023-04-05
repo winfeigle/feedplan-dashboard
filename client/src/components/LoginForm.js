@@ -67,7 +67,7 @@ function LoginForm(){
           Log in
         </Button>
          <div className="signup-link">
-          <a href="/sign-up">Don't have an account? <u>Sign up here</u></a>
+          <a href="/signup">Don't have an account? <u>Sign up here</u></a>
         </div>
       </form>
     </div>

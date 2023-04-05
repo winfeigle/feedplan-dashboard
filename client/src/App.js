@@ -37,7 +37,7 @@ function App() {
             </Route>
             <Route
               element={<SignupForm />}
-              path="/sign-up"
+              path="/signup"
               >
             </Route>
           </Routes>

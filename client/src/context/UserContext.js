@@ -29,6 +29,7 @@ const UserProvider = ({ children }) => {
               r.json().then((user) => {
                   loginUser(user)
                   loadUser();
+                  navigate('/restaurants');
                 });
             } else {
               r.json().then((err) => setErrors(err.errors));
