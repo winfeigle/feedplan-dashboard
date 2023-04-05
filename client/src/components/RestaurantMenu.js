@@ -24,8 +24,9 @@ export default function RestaurantMenu({ restaurant }){
 
 
     return(
-        <div className="restaurant-menu-section">
-            <div className="dashboard-heading">
+
+        <div class="menu-page-container">
+            <div class="dashboard-heading">
                 <div className="card-headings">
                     <img
                         id="restaurant-icon"
@@ -47,16 +48,19 @@ export default function RestaurantMenu({ restaurant }){
                     add meal
                 </Button>
             </div>
-            <div className="menu-container">
-                    {renderMenu}
+            <div class="restaurant-menu-section">
+                <div class="menu-container">
+                        {renderMenu}
+                    </div>
+                    <div>
+                        <CreateMenuItemModal
+                            restaurant={restaurant}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                            />
+                    </div>
             </div>
-            <div>
-                <CreateMenuItemModal
-                    restaurant={restaurant}
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                    />
-            </div>
+                
         </div>
     );
 }

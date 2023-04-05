@@ -252,21 +252,49 @@ h4.nav-headers{
   margin: 2rem 3rem;
 }
 
-.page-container, .menu-container{
+.page-container{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.menu-page-container{
+.menu-page-container {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.restaurant-menu-section{
-  display: flexbox;
-  margin-bottom: 3rem;
+.dashboard-headings {
+  display: flex;
+  overflow-y: auto;
+}
+
+.restaurant-menu-section {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 2rem;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.menu-item-card {
+  flex: 0 0 350px;
+  margin-right: 1rem;
+}
+
+.menu-item-card:last-child {
+  margin-right: 0;
+}
+
+#meal-info-text {
+  padding: 1.25rem 2rem 0.5rem;
+  font-size: 0.9rem;
 }
 
 .card-body {
@@ -505,5 +533,6 @@ span.restaurant-address {
 }
 
 #meal-image{
+  aspect-ratio: 1/1;
   border-radius: 0;
 }
