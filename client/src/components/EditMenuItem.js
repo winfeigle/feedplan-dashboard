@@ -18,10 +18,10 @@ const EditMenuItem = (props) => {
         })
     }
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault()
+    const handleFormSubmit = () => {
         updateMenuItem(menuItemData);
         setMenuItemData({});
+        props.onHide()
     }
 
     return(
@@ -106,7 +106,6 @@ const EditMenuItem = (props) => {
                         <Button 
                             variant="feedplan-purple" 
                             type="submit"
-                            onClick={props.onHide}
                             >
                                 Submit
                             </Button>
