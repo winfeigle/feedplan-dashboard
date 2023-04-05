@@ -255,10 +255,6 @@ h4.nav-headers{
   display: flexbox;
 }
 
-.menus-page{
-  margin-right: 3rem;
-}
-
 .page{
   margin: 2rem 3rem;
 }
@@ -303,6 +299,7 @@ h4.nav-headers{
   overflow-x: auto;
   overflow-y: hidden;
   margin-bottom: 2rem;
+  margin-right: 3rem;
 }
 
 .menu-container {
