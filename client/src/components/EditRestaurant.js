@@ -18,7 +18,7 @@ const EditRestaurant = (props) => {
         })
     }
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = () => {
         updateRestaurant(restaurantData);
         setRestaurantData({});
     }
