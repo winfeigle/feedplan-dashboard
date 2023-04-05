@@ -41,6 +41,10 @@ h1, h2, h3, h4{
   margin: 0px 1rem 10px;
 }
 
+#add-meal-button{
+  margin-left: 10px;
+}
+
 .dashboard-heading h2{
   font-weight: bold;
   font-size: 1.75rem;
@@ -247,10 +251,34 @@ h4.nav-headers{
   margin-bottom: 2rem;
 }
 
-.page{
+.page, .menus-page{
   display: flexbox;
+}
+
+.menus-page{
+  margin-right: 3rem;
+}
+
+.page{
   margin: 2rem 3rem;
 }
+
+.menus-page .restaurant-heading,
+.menus-page .dashboard-heading{
+  display: flex;
+  align-items: center;
+}
+
+.menus-page .restaurant-heading{
+  padding: 0rem 0rem 1.5rem 2.5rem;
+}
+
+.menus-page .dashboard-heading {
+  padding: 2rem 0rem 0rem 3rem;
+  margin: none;
+}
+
+
 
 .page-container{
   display: flex;
@@ -281,15 +309,12 @@ h4.nav-headers{
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 1rem;
+  padding-left: 3rem;
 }
 
 .menu-item-card {
   flex: 0 0 350px;
   margin-right: 1rem;
-}
-
-.menu-item-card:last-child {
-  margin-right: 0;
 }
 
 #meal-info-text {

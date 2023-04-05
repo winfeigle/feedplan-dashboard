@@ -23,7 +23,7 @@ export default function MenusPage(){
     })
 
     return(
-        <div className="page">
+        <div className="menus-page">
             <div className="dashboard-heading">
                 <h2 variant="feedplan-dark-mist">Menus</h2>
             </div>
