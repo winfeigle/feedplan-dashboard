@@ -54,7 +54,7 @@ const UserProvider = ({ children }) => {
                 loadUser();
                 navigate('/restaurants')
             } else{
-                r.json().then((err) => setErrors(`${Object.keys(err)}: ${Object.values(err)}`))
+                r.json().then((err) => setErrors(Object.values(err)))
             }
         })
     }
