@@ -19,7 +19,6 @@ const EditRestaurant = (props) => {
     }
 
     const handleFormSubmit = (e) => {
-        e.preventDefault()
         updateRestaurant(restaurantData);
         setRestaurantData({});
     }
